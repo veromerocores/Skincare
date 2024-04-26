@@ -15,7 +15,7 @@
     color: #3F6443;
     margin-left: 4vh;
     font-weight: bold;
-    font-size: large;
+    font-size: 3vh;
 }
 
 body {
@@ -147,7 +147,7 @@ footer {
     margin-top: 2vh;
 }
 
-.footcontent {
+.footlists {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -163,6 +163,21 @@ footer {
 
 .lista:hover{
     color: white;
+}
+
+.footcontent{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footcontent p{
+    color: #3F6443;
+    font-weight: bold;
+    font-size: 4vh;
+    margin-right: 15vh;
+    text-align: center;
 }
 
 @media (max-width: 500px) {
