@@ -16,10 +16,11 @@
     margin-left: 4vh;
     font-weight: bold;
     font-size: 3vh;
+    cursor: pointer;
 }
 
 body {
-    background-image: url('/images/indexpic.jpg');
+    background-image: url('/images/indexpic.avif');
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
@@ -130,6 +131,7 @@ body {
     z-index: 0;
 }
 
+/* Footer starts */
 footer {
     background-color: #7DC284;
     height: auto;
@@ -180,14 +182,20 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .footcontent {
-        flex-direction: column; 
-        align-items: center; 
-        gap: 10px;
+        flex-direction: 1 column;
+        display: flex;
+        flex-wrap: nowrap; 
+        align-items: center;
+        justify-content: center; 
+        gap: 0px;
         margin-left: 0; 
     }
+
+    /*Funcionaba antes, pero no se que cono le pasa*/
 }
+/*Footer finish*/
 
 /* The switch - adapted from https://www.w3schools.com/howto/howto_css_switch.asp */
 .switch {
