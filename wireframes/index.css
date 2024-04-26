@@ -1,0 +1,234 @@
+.header {
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.header p{
+    color: #3F6443;
+    margin-left: 4vh;
+    font-weight: bold;
+    font-size: large;
+}
+
+body {
+    background-image: url('/images/indexpic.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-position-y: -12vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 767px) {
+    body {
+        background-position-y: 2vh;
+        background-position: center; 
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body { 
+        background-position-y: -13vh;
+        background-position: center;
+    }
+}
+
+.texto{
+    margin-top: 14%;
+    margin-left: 3%;
+    width: 45%;
+    color: white;
+    text-align: center;
+}
+
+.action{
+    background-color: #3F6443;
+    height: 5vh;
+    width: 23vh;
+    border-radius: 1.5vh;
+    border: 0.2px solid;
+    align-content: center;
+    margin-top: 8%;
+    margin-left: 35%;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .texto {
+        margin-top: 30%; 
+        width: 80%; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    .action {
+        margin-top: 20%; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .texto {
+        margin-top: 16%; 
+        width: 60%; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
+    .action {
+        margin-top: 8%; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .texto {
+        margin-top: 14%; 
+        width: 45%; 
+        margin-left: 3%; 
+    }
+
+    .action {
+        margin-top: 8%; 
+        margin-left: 35%; 
+    }
+}
+
+.action:hover{
+    background-color: #B2E1B7;
+    box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
+    text-decoration: none; 
+    color: #3F6443;
+}
+
+.action:hover p{
+    color: #3F6443;
+}
+
+.action p{
+    text-align: center;
+    color: white;
+}
+
+.greenbit {
+    width: 100%;
+    position: relative;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+footer {
+    background-color: #7DC284;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+.line{
+    border-bottom: solid;
+    border-color: black;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2vh;
+}
+
+.footcontent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    font-size: small;
+    gap: 10vh;
+    margin-left: 3%;
+}
+
+.lista{
+    cursor: pointer;
+}
+
+.lista:hover{
+    color: white;
+}
+
+@media (max-width: 500px) {
+    .footcontent {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px;
+        margin-left: 0; 
+    }
+}
+
+/* The switch - adapted from https://www.w3schools.com/howto/howto_css_switch.asp */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 12vh;
+    height: 5.1vh;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #7DC284;
+    -webkit-transition: .5s;
+    transition: .5s;
+    border-radius: 3vh;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 4vh;
+    width: 4vh;
+    left: 0.6vh;
+    bottom: 0.6vh;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: black;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(6vh);
+    -ms-transform: translateX(6vh);
+    transform: translateX(6.7vh);
+  }
+  
+  .slider.round {
+    border-radius: 3vh;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
