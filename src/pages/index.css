@@ -20,7 +20,7 @@
 }
 
 body {
-    background-image: url('/images/indexpic.avif');
+    background-image: url('../images/indexpic.avif');
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
