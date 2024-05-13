@@ -6,7 +6,7 @@ export default function Footer() {
                 <div class="footlists">
                     <ul>
                         <li>
-                            <a href="/about" class="lista">About</a>
+                            <a href="/home" class="lista">Get Started</a>
                         </li>
                         <li>
                             <a href="/wisdom" class="lista">Wisdom</a>
@@ -17,7 +17,7 @@ export default function Footer() {
                             <a href="/yoga" class="lista">Yoga</a>
                         </li>
                         <li>
-                            <a href="/home" class="lista">Get started</a>
+                            <a href="/about" class="lista">About</a>
                         </li>
                     </ul>
                 </div>

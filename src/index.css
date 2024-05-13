@@ -39,6 +39,11 @@ header{
   height: 35vh;
   margin-top: -23vh;
   margin-left: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2.5vh;
 }
 .explain{
   display: flex;
