@@ -1,5 +1,5 @@
+import React from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-
 import Home from './pages/home';
 import About from './pages/about.js';
 import Meditation from './pages/meditation';
