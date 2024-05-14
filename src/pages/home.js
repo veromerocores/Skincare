@@ -8,7 +8,7 @@ export default function Home(){
         <>
             <Header />
             <div  class="background"> 
-                <img src="../assets/images/indexpic.jpg" alt=''class="backImage"/>
+                <img src="../assets/images/indexpic.jpg" alt=''class="a woman doing a seated position yoga in green workout clothes"/>
                 <div class="top">
                     <div class="texto">
                         <p>Immerse yourself in the transformative world of frog-inspired yoga, strongly 
@@ -19,7 +19,8 @@ export default function Home(){
                     community and let the symbolism of the frog guide you on a journey of renewal 
                     and inner peace.
                         </p>
-                        <div className="action"><a href="/yoga">Let's yoga!</a></div>
+                        <p>Choose FroGa for a relaxed and fun yoga practice, and the Yoga Poses pages to search for a more informative workout.</p>
+                        <div className="action" role='button' tabIndex={0}><a href="/yoga">Let's yoga!</a></div>
                     </div>
                 </div>
             </div>

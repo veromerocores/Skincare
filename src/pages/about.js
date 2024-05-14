@@ -8,7 +8,7 @@ export default function About() {
             <Header />
             <div>
                 <div class="about-page">
-                    <img src="../assets/images/coupleyoga.avif" alt='' class="backImage" />
+                    <img src="../assets/images/coupleyoga.avif" alt='' class="two people doing a standing yoga position with their arms raised" />
                     <div class="about1">
                         <h1>About Us</h1>
                         <p>Welcome to FroGa, where we blend the joy of yoga with the playful spirit of frogs! 🐸</p>

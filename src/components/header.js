@@ -1,10 +1,33 @@
-                
+import React, { useState, useEffect } from 'react';
+import LongMenu from './longMenu';
+import DarkModes from '../components/darkMode';
+
 export default function Header() {
-    return(
-        <header class="header">
-                    <p>FroGa</p>
-                    {/* <!--Burger menu component--> */}
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setTheme(prefersDarkMode ? 'dark' : 'light');
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    };
+
+    return (
+        <header className={`header ${theme}`}>
+            <p>FroGa</p>
+            <div className='header-right'>
+                <DarkModes theme={theme} toggleTheme={toggleTheme} />
+                <LongMenu />
+            </div>
         </header>
-    )
+    );
 }
-                

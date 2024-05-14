@@ -9,6 +9,9 @@ export default function Footer() {
                             <a href="/home" class="lista">Get Started</a>
                         </li>
                         <li>
+                            <a href="/froga" class="lista">FroGa</a>
+                        </li>
+                        <li>
                             <a href="/wisdom" class="lista">Wisdom</a>
                         </li>
                     </ul>

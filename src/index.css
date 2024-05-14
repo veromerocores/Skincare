@@ -6,17 +6,50 @@
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
+}
+
+.green-div{
+  background-color: #B2E1B7;
+  width: 74%;
+  margin-left: 13%;
+  margin-bottom: 5%;
+  border-radius: 5vh;
+}
+
+.froga-text{
+  margin-top: 13vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: 35vh;
+  margin-right: 35vh;
+}
+
+.froga-text p{
+  margin-top: 10%;
 }
 
 .content {
-  margin-top: 50px;
+  margin-top: 5%;
+  margin-left: 5%;
   display: flex;
   justify-content: center; 
 }
 
-header{
+.header{
   z-index: 1;
+  position: fixed;
+}
+
+.header p{
+  font-size: 140%;
+}
+
+.header-right{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1%;
+  margin-right: 2%;
 }
 
 .wisfrog{
@@ -224,4 +257,62 @@ header{
 .names-input{
   display: flex;
   justify-content: space-between;
+}
+
+.yoga-search{
+  margin-top: 13vh;
+  margin-left: 5vh;
+}
+
+.yoga-category{
+  color: #0A5119;
+  display: flex;
+  justify-content: center;
+}
+
+.yoga-results-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.yoga-category-item {
+  flex: 1 0 45%;
+  margin: 1%;
+}
+
+.yoga-poses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px;
+}
+
+.yoga-pose {
+  border: 1px solid #0A5119;
+  padding: 2%;
+  margin-bottom: 1%;
+  border-radius: 5vh;
+}
+
+@media (max-width: 768px) {
+  .yoga-category-item {
+    flex: 1 0 calc(100% - 20px); /* One column on smaller screens */
+  }
+}
+
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.dark p{
+  color: white;
+}
+
+.toggle{
+  margin-top: 40%;
 }

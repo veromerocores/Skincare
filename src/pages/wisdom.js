@@ -8,24 +8,15 @@ export default function Wisdom(){
         <>
             <Header />
             <div>
-                <form class="formBlock">
-                    <input
-                        type="text"
-                        placeholder="Search for quote by author"
-                        className="author-search"
-                    />
-                    <button type="submit" className="search-button">Search</button>
-                </form>
-                <div class="pictures">
-                    <img class="wisfrog" src="../assets/images/Frog Wisdom.jpg" alt="This is the frog of wisdom, dressed like a hermit with a large wisdom stick in her hands"/>
-                    <div class="bubble">
-                        <RandomQuote />
-                        {console.log(RandomQuote)}
+                <div className="pictures">
+                    <img className="wisfrog" src="../assets/images/Frog Wisdom.jpg" alt="the frog of wisdom, dressed like a hermit with a large wisdom stick in her hands"/>
+                    <div className="bubble">
+                        <RandomQuote /> 
                     </div>
-                    <div class="explain">   
-                        <p class="title">Frog Wisdom</p>
-                        <p class="text"> The wise frog hops not to please your ears, but to nourish your soul with the truths you need.</p>
-                        <p class="text">Embrace her sass with a splash of pond water ;)</p>
+                    <div className="explain">   
+                        <p className="title">Frog Wisdom</p>
+                        <p className="text"> The wise frog hops not to please your ears, but to nourish your soul with the truths you need.</p>
+                        <p className="text">Embrace her sass with a splash of pond water ;)</p>
                     </div>
                 </div>
 

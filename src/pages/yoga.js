@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from '../components/header';
-import Grid from '../components/grid';
 import Footer from '../components/footer';
+import YogaComponent from '../components/YogaAPI';
 
-export default function About() {
+export default function Yoga() {
     return (
         <>
-            <div className="body-yoga">
+            <div>
                 <Header />
-                <div className="content">
-                    <Grid />
+                <div className="yoga-search">
+                    <YogaComponent />
                 </div>
                 <Footer />
             </div>
