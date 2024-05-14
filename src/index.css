@@ -296,12 +296,20 @@
   color: #000000;
 }
 
+.light button{
+  color: #0A5119;
+}
+
 .dark {
   background-color: #333333;
   color: #ffffff;
 }
 
 .dark p{
+  color: white;
+}
+
+.dark button{
   color: white;
 }
 

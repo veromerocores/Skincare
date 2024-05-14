@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LongMenu from './longMenu';
+import BasicMenu from './menu';
 import DarkModes from '../components/darkMode';
 
 export default function Header() {
@@ -26,7 +26,7 @@ export default function Header() {
             <p>FroGa</p>
             <div className='header-right'>
                 <DarkModes theme={theme} toggleTheme={toggleTheme} />
-                <LongMenu />
+                <BasicMenu />
             </div>
         </header>
     );
