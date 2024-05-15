@@ -23,7 +23,7 @@ export default function Header() {
 
     return (
         <header className={`header ${theme}`}>
-            <p>FroGa</p>
+            <a role='button' tabIndex={0} href="/home">FroGa</a>
             <div className='header-right'>
                 <DarkModes theme={theme} toggleTheme={toggleTheme} />
                 <BasicMenu />

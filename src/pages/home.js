@@ -20,7 +20,7 @@ export default function Home(){
                     and inner peace.
                         </p>
                         <p>Choose FroGa for a relaxed and fun yoga practice, and the Yoga Poses pages to search for a more informative workout.</p>
-                        <div className="action" role='button' tabIndex={0}><a href="/yoga">Let's yoga!</a></div>
+                        <div className="action" role='button' tabIndex={0}><a href="/froga">Let's yoga!</a></div>
                     </div>
                 </div>
             </div>

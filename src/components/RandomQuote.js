@@ -1,51 +1,41 @@
 import React, { useState, useEffect } from 'react';
 
 const RandomQuote = () => {
-  const [quote, setQuote] = useState(null);
-  const [category, setCategory] = useState('');
-  const [searchedQuote, setSearchedQuote] = useState(null);
-
-  const fetchRandomQuote = async () => {
-    try {
-      const response = await fetch('https://api.codetabs.com/v1/proxy?quest=https://zenquotes.io/api/random');
-      const data = await response.json();
-      if (Array.isArray(data) && data.length > 0) {
-        setQuote(data[0]);
-      } else {
-        console.error('Empty or invalid response from the API');
-      }
-    } catch (error) {
-      console.error('Error fetching random quote:', error);
-    }
-  };
-    
-  
+  const [quote, setQuote] = useState('');
+  const [author, setAuthor] = useState('');
 
   useEffect(() => {
-    fetchRandomQuote();
-  }, []);
+    const fetchQuote = async () => {
+      try {
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const apiUrl = 'https://zenquotes.io/api/random';
+        const response = await fetch(proxyUrl + apiUrl);
+        if (!response.ok) {
+          throw new Error('Failed to fetch quote');
+        }
+        const data = await response.json();
+        if (data.length > 0 && data[0].q && data[0].a) {
+          setQuote(data[0].q);
+          setAuthor(data[0].a);
+        } else {
+          throw new Error('No quote found');
+        }
+      } catch (error) {
+        console.error('Error fetching quote:', error);
+      }
+    };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-  };
+    fetchQuote();
+  }, []);
 
   return (
     <div>
-      <div>
-        {searchedQuote ? (
-          <div>
-            <p className="quote-text">{searchedQuote.q}</p>
-            <p className="quote-author">- {searchedQuote.a}</p>
-          </div>
-        ) : (
-          quote && (
-            <div>
-              <p className="quote-text">{quote.q}</p>
-              <p className="quote-author">- {quote.a}</p>
-            </div>
-          )
-        )}
-      </div>
+      {quote && author && (
+        <blockquote>
+          <p>{quote}</p>
+          <p>- {author}</p>
+        </blockquote>
+      )}
     </div>
   );
 };

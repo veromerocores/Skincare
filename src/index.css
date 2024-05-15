@@ -21,12 +21,37 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
   margin-left: 35vh;
   margin-right: 35vh;
 }
 
 .froga-text p{
   margin-top: 10%;
+}
+
+.froga-button{
+  background-color: #0A5119;
+  height: 5vh;
+  width: 23vh;
+  border-radius: 1.5vh;
+  border: 0.2px solid white;
+  align-content: center;
+  justify-content: center;
+  margin-top: 8%;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 33%;
+}
+
+.froga-button p {
+  text-align: center;
+  color: white;
+}
+
+.froga-button:hover {
+  box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
+  background-color: #3F6443;
 }
 
 .content {
@@ -136,7 +161,7 @@
 
 .about1{
   background-color: #B2E1B7;
-  opacity: 70%;
+  opacity: 85%;
   border-radius: 10vh;
   margin-left: 22%;
   width: 55%;
@@ -286,10 +311,68 @@
 }
 
 @media (max-width: 768px) {
+
+  .froga-text {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .about1 {
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  .about2 {
+    margin-top: 70%;
+  }
+
+  .about-form {
+    width: 90%;
+    height: 80%;
+    margin-top: 7%;
+  }
+
+  .about-form-button {
+    width: 50%;
+  }
+
+  .names-input {
+    flex-direction: column;
+  }
+
+  .first-name-input,
+  .last-name-input {
+    width: 100%;
+  }
+
+  .message-input {
+    height: 15vh;
+  }
+
+  .choice-input {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .choices {
+    margin-left: 0;
+  }
+
+  .yoga-search {
+    margin-top: 5vh;
+    margin-left: 5%;
+  }
+
   .yoga-category-item {
-    flex: 1 0 calc(100% - 20px); /* One column on smaller screens */
+    flex: 1 0 calc(100% - 20px); 
+  }
+
+  .yoga-poses {
+    grid-template-columns: 1fr; 
   }
 }
+
+/* Light and Dark Mode Styles */
 
 .light {
   background-color: #ffffff;
@@ -305,7 +388,7 @@
   color: #ffffff;
 }
 
-.dark p{
+.dark a{
   color: white;
 }
 

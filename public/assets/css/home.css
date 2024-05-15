@@ -3,15 +3,14 @@
     height: 50px;
     width: 100%;
     position: fixed;
-    position: fixed;
     top: 0; 
     left: 0; 
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
-.header p{
+.header a {
     color: #3F6443;
     margin-left: 4vh;
     font-weight: bold;
@@ -42,7 +41,7 @@ body {
     }
 }
 
-.background{
+.background {
     position: relative;
     display: flex;
     height: 100%;
@@ -50,17 +49,18 @@ body {
     margin-top: -100px ;
 }
 
-.backImage{
+.backImage {
     width: 100%;
     height: auto;
     z-index: -1; 
 }
-.top{
+
+.top {
     position: absolute;
     margin-top: 5%;
 }
 
-.texto{
+.texto {
     margin-left: 3%;
     width: 45%;
     color: white;
@@ -70,7 +70,7 @@ body {
     flex-direction: column;
 }
 
-.action{
+.action {
     background-color: #3F6443;
     height: 5vh;
     width: 23vh;
@@ -82,7 +82,7 @@ body {
     font-size: 16px;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
@@ -130,18 +130,18 @@ a{
     }
 }
 
-.action:hover{
+.action:hover {
     background-color: #B2E1B7;
     box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
     text-decoration: none; 
     color: #3F6443;
 }
 
-.action:hover p{
+.action:hover p {
     color: #3F6443;
 }
 
-.action p{
+.action p {
     text-align: center;
     color: white;
 }
@@ -163,12 +163,12 @@ footer {
     position: absolute;
 }
 
-.footerHome{
+.footerHome {
     margin-top: -800px;
     position: absolute;
 }
 
-.line{
+.line {
     border-bottom: solid;
     border-color: black;
     width: 90%;
@@ -187,7 +187,7 @@ footer {
     margin-top: 1vh;
 }
 
-.lista{
+.lista {
     cursor: pointer;
     text-decoration: none;
     color: black;
@@ -197,22 +197,22 @@ footer {
     align-content: space-between;
 }
 
-.lista:hover{
+.lista:hover {
     color: white;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
-.footcontent{
+.footcontent {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.footcontent p{
+.footcontent p {
     color: #3F6443;
     font-weight: bold;
     font-size: 170%;
@@ -222,7 +222,7 @@ ul{
 
 @media (max-width: 600px) {
     .footcontent {
-        flex-direction: 1 column;
+        flex-direction: column;
         display: flex;
         flex-wrap: nowrap; 
         align-items: center;
@@ -230,8 +230,6 @@ ul{
         gap: 0px;
         margin-left: 0; 
     }
-
-    /*Funcionaba antes, pero no se que cono le pasa*/
 }
 /*Footer finish*/
 
@@ -241,15 +239,15 @@ ul{
     display: inline-block;
     width: 12vh;
     height: 5.1vh;
-  }
-  
-  .switch input {
+}
+
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  .slider {
+}
+
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -257,12 +255,11 @@ ul{
     right: 0;
     bottom: 0;
     background-color: #7DC284;
-    -webkit-transition: .5s;
     transition: .5s;
     border-radius: 3vh;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: "";
     height: 4vh;
@@ -270,26 +267,40 @@ ul{
     left: 0.6vh;
     bottom: 0.6vh;
     background-color: white;
-    -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
-  }
-  
-  input:checked + .slider {
+}
+
+input:checked + .slider {
     background-color: black;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(6vh);
-    -ms-transform: translateX(6vh);
+}
+
+input:checked + .slider:before {
     transform: translateX(6.7vh);
-  }
-  
-  .slider.round {
+}
+
+.slider.round {
     border-radius: 3vh;
-  }
-  
-  .slider.round:before {
+}
+
+.slider.round:before {
     border-radius: 50%;
-  }
-  
+}
+
+@media (max-width: 768px) {
+    .switch {
+        width: 8vh;
+        height: 3.4vh;
+    }
+
+    .slider {
+        border-radius: 2vh;
+    }
+
+    .slider:before {
+        height: 2.7vh;
+        width: 2.7vh;
+        left: 0.3vh;
+        bottom: 0.3vh;
+    }
+}
