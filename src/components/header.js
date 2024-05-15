@@ -1,14 +1,26 @@
-                
+import React, { useState, useEffect } from 'react';
+import BasicMenu from './menu';
+
 export default function Header() {
-    return(
-        <header class="header">
-                    <p onclick="window.location.href = 'index.html';">FroGa</p>
-                    <label class="switch">
-                        <input type="checkbox" id="toggleSwitch"/>
-                        <span class="slider round"></span>
-                    </label>
-                    {/* <!--Burger menu component--> */}
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setTheme(prefersDarkMode ? 'dark' : 'light');
+        }
+    }, []);
+
+
+    return (
+        <header className={`header ${theme}`}>
+            <a role='button' tabIndex={0} href="/home">FroGa</a>
+            <div className='header-right'>
+                <BasicMenu />
+            </div>
         </header>
-    )
+    );
 }
-                

@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+FroGa: Embrace Mindfulness with a Smile
+Welcome to FroGa, a platform that embodies mindfulness, community, and purpose while radiating a lighthearted and humorous vibe. At FroGa, we believe in making mindfulness and yoga accessible to everyone, without barriers of cost or complexity. Our platform is dedicated to holistic well-being and self-discovery, inviting users to explore yoga and mindfulness practices with a smile.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Purpose and Philosophy
+FroGa's essence is deeply rooted in the symbolism of the frog and its connection to the water element. Just like a frog gracefully moves between water and land, our platform encourages users to navigate the realms of mindfulness and self-discovery with ease. We believe that mental and physical well-being should be accessible to all, regardless of financial constraints or prior experience.
 
-## Available Scripts
+Core Values
+Accessibility: We believe that anything beneficial for mental and physical health should be accessible for free. Our platform offers a wide range of resources and practices without requiring any sign-up or payment. As well as trying to provide the most accessible website possible to our means.
 
-In the project directory, you can run:
+Community: FroGa fosters a sense of belonging and community among its users. Through shared experiences and support, we aim to create a supportive environment where individuals can embark on their journey of self-discovery together. This is why we implement a form in the about page, so people can feel connected to the community by sharing their experiences and concerns, or signing up for the newsletter that will keep them engaged with the community.
 
-### `npm start`
+Playfulness: With our unique frog-inspired design and playful atmosphere, FroGa brings joy and lightness to the practice of mindfulness and yoga. We encourage users to approach their practice with curiosity, humor, and a sense of adventure.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Features
+Free Resources: Access a diverse library of yoga poses with diverse levels of difficulty, a frog inspired session that you can follow at your own pase with our grid design, and keep your mind at ease with the random quotes our frog provides to you. Meditation page in the works!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Unique Frog Design: Our platform's distinctive frog design adds a touch of whimsy and charm, reinforcing our commitment to playful exploration and self-discovery.
 
-### `npm test`
+No Sign-up Required: Enjoy seamless access to all features and resources without the hassle of creating an account or providing personal information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Yoga Poses API https://github.com/alexcumplido/yoga-api and ChatGPT
+Random Quotes API https://zenquotes.io/, ChatGPT and Charlie Bronca
+Toggle switch - adapted from https://www.w3schools.com/howto/howto_css_switch.asp
+Grid and Menu from MUI (https://mui.com/material-ui/react-grid/ and https://mui.com/material-ui/react-menu/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Veronica Romero Cores
