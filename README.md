@@ -19,9 +19,6 @@ Unique Frog Design: Our platform's distinctive frog design adds a touch of whims
 No Sign-up Required: Enjoy seamless access to all features and resources without the hassle of creating an account or providing personal information.
 
 
-and a live deployment URL of the project
-
-
 Yoga Poses API https://github.com/alexcumplido/yoga-api and ChatGPT
 Random Quotes API https://zenquotes.io/, ChatGPT and Charlie Bronca
 Toggle switch - adapted from https://www.w3schools.com/howto/howto_css_switch.asp

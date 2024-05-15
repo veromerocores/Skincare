@@ -17,11 +17,10 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-
 export default function ImageMasonry() {
   return (
     <Box sx={{ width: 900, minHeight: 829 }}>
-      <Masonry columns={4} spacing={5} className='myGrid'>
+      <Masonry columns={2} spacing={5} className='myGrid'>
         {itemData.map((item, index) => (
           <div key={index}>
             <StyledAccordion sx={{ minHeight: heights[index] }}>

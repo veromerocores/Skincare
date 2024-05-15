@@ -7,6 +7,7 @@ import Wisdom from './pages/wisdom';
 import FroGa from "./pages/froga";
 import NoPage from './pages/nopage';
 
+
 export default function App() {
   return (
     <div>

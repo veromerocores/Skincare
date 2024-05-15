@@ -1,5 +1,5 @@
 .myGrid {
-  max-width: 900px; 
+  max-width: 56.25rem; 
 }
 
 .body-yoga {
@@ -14,6 +14,7 @@
   margin-left: 13%;
   margin-bottom: 5%;
   border-radius: 5vh;
+  margin-bottom: 15%;
 }
 
 .froga-text{
@@ -35,12 +36,12 @@
   height: 5vh;
   width: 23vh;
   border-radius: 1.5vh;
-  border: 0.2px solid white;
+  border: 0.013rem solid white;
   align-content: center;
   justify-content: center;
   margin-top: 8%;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   margin-left: 33%;
 }
 
@@ -50,7 +51,7 @@
 }
 
 .froga-button:hover {
-  box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
+  box-shadow: inset 0rem 0.313rem 0.313rem -0.313rem rgba(0,0,0,0.75);
   background-color: #3F6443;
 }
 
@@ -78,30 +79,31 @@
 }
 
 .wisfrog{
-  z-index: 1;
-  margin-left: 3vh;
-  height: 55vh;
-  width: auto;
+  margin-left: 3vb;
+  width: 40%;
+  height: auto;
+  margin-top: -40%;
 }
 .pictures{
   display: flex;
   flex-wrap: wrap;
   margin-top: 40vh;
+  margin-bottom: 20%;
 }
 .bubble{
   background-color: white;
   border: 1vh solid;
   border-radius: 6vh;
   border-color: #7DC284;
-  width: 70vh;
-  height: 35vh;
-  margin-top: -23vh;
-  margin-left: 15vh;
+  width: 70vb;
+  height: 35vb;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 2.5vh;
+  font-size: 2.5vb;
+  margin-top: 10%;
+  margin-left: 33%;
 }
 .explain{
   display: flex;
@@ -109,9 +111,10 @@
   text-align: center;
   flex-direction: column;
   z-index: 1;
-  width: 50vh;
-  margin-top: 15vh;
-  margin-left: 3.8vh;
+  width: 30%;
+  margin-top: -20%;
+  margin-left: 10%;
+  z-index: 0;
 }
 .title{
   color: #0A5119;
@@ -122,15 +125,15 @@
   font-size: 2vh;
 }
 
-.about-main {
-  height: 1000px;
-}
+/* .about-main {
+  height: 62.5rem;
+} */
 
 .author-search{
   width: 30%;
   height: 4vh;
-  border-radius: 7px;
-  border: solid 1px;
+  border-radius: 0.438rem;
+  border: solid 0.063rem;
 }
 
 .search-button{
@@ -138,17 +141,24 @@
   height: 5vh;
   width: 17vh;
   border-radius: 1.5vh;
-  border: 0.2px solid white;
+  border: 0.013rem solid white;
   align-content: center;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   color: white;
 }
 .search-button:hover{
   background-color: #B2E1B7;
-  box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
+  box-shadow: inset 0rem 0.313rem 0.313rem -0.313rem rgba(0,0,0,0.75);
   text-decoration: none; 
   color: #3F6443;
+}
+
+.backImage {
+  width: auto;
+  height: 100%; 
+  object-fit: cover;
+  margin-bottom: -34.375rem;
 }
 
 .about-page{
@@ -156,7 +166,7 @@
   display: flex;
   height: 100%;
   flex-direction: column;
-  margin-top: -100px ;
+  margin-top: -6.25rem ;
 }
 
 .about1{
@@ -176,24 +186,61 @@
 
 .about2{
   background-color: rgb(125, 194, 132, 0.7);
-  height: 50%;
+  height: 38.313rem;
   width: 100%;
-  position: absolute;
-  margin-top: 50%;
   display: flex;
   justify-content: center;
+  margin-bottom: 5%;
+  margin-top: -5%;
+}
+
+@media (max-width: 48rem) {
+  .about2 {
+    background-color: rgb(125, 194, 132, 0.7);
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    position: absolute;
+    margin-top: 120%; 
+  }
+  .about2 h1{
+    font-size: 100%;
+  }
+  .about2 p{
+    font-size: 80%;
+  }
+  .paragraph{
+    margin-top: -20%;
+    margin-bottom: -20%;
+  }
+  .about2 label{
+    font-size: 80%;
+    margin-left: 10%;
+  }
+
+  .green-div{
+    background-color: #B2E1B7;
+    width: 74%;
+    margin-left: 13%;
+    margin-bottom: 5%;
+    border-radius: 5vh;
+    margin-bottom: 60%;
+  }
 }
 
 .about-form{
   width: 75%;
-  height: 70%;
+  height: 75%;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
   background-color: white;
   border-radius: 5vh;
-  margin-top: 7%;
+  margin-top: 5%;
+  padding-bottom: 1%;
 }
 .about-form p{
   width: 80%;
@@ -201,23 +248,24 @@
 .about-form h1{
   color: #0A5119;
 }
+
 .about-form-button{
   background-color: #3F6443;
   height: 5vh;
   width: 23vh;
   border-radius: 1.5vh;
-  border: 0.2px solid white;
+  border: 0.013rem solid white;
   align-content: center;
   margin-top: 8%;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   color: white;
   margin-top: -0.5%;
   margin-bottom: 2%;
 }
 .about-form-button:hover{
   background-color: #B2E1B7;
-  box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
+  box-shadow: inset 0rem 0.313rem 0.313rem -0.313rem rgba(0,0,0,0.75);
   text-decoration: none; 
   color: #3F6443;
 }
@@ -236,29 +284,30 @@
   gap: 2vh;
 }
 
+
 .first-name-input{
   width: 45%;
-  border-radius: 7px;
-  border: solid 1px;
+  border-radius: 0.438rem;
+  border: solid 0.063rem;
 }
 
 .last-name-input{
   width: 45%;
-  border-radius: 7px;
-  border: solid 1px;
+  border-radius: 0.438rem;
+  border: solid 0.063rem;
 }
 .email-input{
-  border-radius: 7px;
-  border: solid 1px;
+  border-radius: 0.438rem;
+  border: solid 0.063rem;
 }
 .message-input{
-  border-radius: 7px;
-  border: solid 1px;
+  border-radius: 0.438rem;
+  border: solid 0.063rem;
   height: 10vh;
 }
 .message-input::placeholder{
   position: relative;
-  top: -20px;
+  top: -1.25rem;
 }
 
 .choice-input{
@@ -279,6 +328,7 @@
 .yoga-search{
   margin-top: 13vh;
   margin-left: 5vh;
+  margin-bottom: 20%;
 }
 
 .yoga-category{
@@ -300,18 +350,34 @@
 .yoga-poses {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .yoga-pose {
-  border: 1px solid #0A5119;
+  border: 0.063rem solid #0A5119;
   padding: 2%;
   margin-bottom: 1%;
   border-radius: 5vh;
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 48rem) {
+  .pictures{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50%;
+  }
+  .explain{
+    margin-top: 0;
+    width: 70%;
+  }
+  .bubble{
+    width: 60%;
+    height: auto;
+    display: flex;
+    margin-left: 20%;
+    margin-bottom: -10%;
+    margin-top: 20%;
+  }
   .froga-text {
     margin-left: 5%;
     margin-right: 5%;
@@ -320,55 +386,41 @@
   .about1 {
     margin-left: 5%;
     width: 90%;
+    margin-top: 40%;
   }
 
-  .about2 {
-    margin-top: 70%;
+  .about1 h1{
+    color: #0A5119;
+    font-size: 150%;
   }
 
-  .about-form {
-    width: 90%;
-    height: 80%;
-    margin-top: 7%;
+  .about1 p{
+    font-size: 80%;
   }
-
-  .about-form-button {
-    width: 50%;
-  }
-
-  .names-input {
-    flex-direction: column;
-  }
-
-  .first-name-input,
-  .last-name-input {
-    width: 100%;
-  }
-
-  .message-input {
-    height: 15vh;
-  }
-
-  .choice-input {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .choices {
-    margin-left: 0;
+  
+  .backImage {
+    width: auto;
+    height: 100%; 
+    object-fit: cover;
+    margin-top: 20%;
   }
 
   .yoga-search {
-    margin-top: 5vh;
+    margin-top: 17%;
     margin-left: 5%;
+    margin-bottom: 70%;
   }
 
   .yoga-category-item {
-    flex: 1 0 calc(100% - 20px); 
+    flex: 1 0 calc(100% - 1.25rem); 
   }
 
   .yoga-poses {
     grid-template-columns: 1fr; 
+  }
+  .yoga-poses img{
+    width: 70%;
+    margin-left: 17%;
   }
 }
 
@@ -399,3 +451,6 @@
 .toggle{
   margin-top: 40%;
 }
+
+
+

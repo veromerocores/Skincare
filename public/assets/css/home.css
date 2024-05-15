@@ -1,6 +1,6 @@
 .header {
     background-color: white;
-    height: 50px;
+    height: 3.125rem;
     width: 100%;
     position: fixed;
     top: 0; 
@@ -27,14 +27,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.938rem) {
     body {
         background-position-y: 2vh;
         background-position: center; 
     }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 48rem) and (max-width: 63.938rem) {
     body { 
         background-position-y: -13vh;
         background-position: center;
@@ -44,20 +44,21 @@ body {
 .background {
     position: relative;
     display: flex;
-    height: 100%;
     flex-direction: column;
-    margin-top: -100px ;
+    height: 100vh; 
 }
 
 .backImage {
-    width: 100%;
-    height: auto;
-    z-index: -1; 
+    width: auto;
+    height: 100%; 
+    object-fit: cover; 
 }
 
 .top {
     position: absolute;
-    margin-top: 5%;
+    top: 30%; 
+    transform: translateY(-50%);
+    width: 100%;
 }
 
 .texto {
@@ -75,11 +76,11 @@ body {
     height: 5vh;
     width: 23vh;
     border-radius: 1.5vh;
-    border: 0.2px solid white;
+    border: 0.013rem solid white;
     align-content: center;
     margin-top: 8%;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 a {
@@ -87,9 +88,9 @@ a {
     color: white;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.938rem) {
     .texto {
-        margin-top: 30%; 
+        margin-top: 60%; 
         width: 80%; 
         margin-left: auto; 
         margin-right: auto; 
@@ -102,7 +103,7 @@ a {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 48rem) and (max-width: 63.938rem) {
     .texto {
         margin-top: 16%; 
         width: 60%; 
@@ -117,7 +118,7 @@ a {
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
     .texto {
         margin-top: 14%; 
         width: 45%; 
@@ -132,7 +133,7 @@ a {
 
 .action:hover {
     background-color: #B2E1B7;
-    box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.75);
+    box-shadow: inset 0rem 0.313rem 0.313rem -0.313rem rgba(0,0,0,0.75);
     text-decoration: none; 
     color: #3F6443;
 }
@@ -149,22 +150,21 @@ a {
 .greenbit {
     width: 100%;
     height: auto;
-    padding: 0px;
-    margin-top: -800px;
+    padding: 0rem;
+    margin-top: -50rem;
 }
 
 /* Footer starts */
 footer {
     background-color: #7DC284;
-    height: auto;
     width: 100%;
-    margin: 0px;
-    padding: 0px;
-    position: absolute;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 .footerHome {
-    margin-top: -800px;
+    margin-top: -50rem;
     position: absolute;
 }
 
@@ -220,14 +220,14 @@ ul {
     text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5rem) {
     .footcontent {
         flex-direction: column;
         display: flex;
         flex-wrap: nowrap; 
         align-items: center;
         justify-content: center; 
-        gap: 0px;
+        gap: 0rem;
         margin-left: 0; 
     }
 }
@@ -287,7 +287,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     .switch {
         width: 8vh;
         height: 3.4vh;

@@ -2,10 +2,17 @@ import React from 'react';
 import Header from '../components/header';
 import Grid from '../components/grid';
 import Footer from '../components/footer';
+import { Helmet } from 'react-helmet';
+
+
+const TITLE = 'Froga';
 
 export default function FroGa() {
     return (
         <>
+            <Helmet>
+                <title>{TITLE}</title>
+            </Helmet>
             <div className="body-yoga">
                 <Header />
                 <div className='green-div'>
