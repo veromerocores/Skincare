@@ -1,4 +1,7 @@
+### Project Description
+
 FroGa: Embrace Mindfulness with a Smile
+
 Welcome to FroGa, a platform that embodies mindfulness, community, and purpose while radiating a lighthearted and humorous vibe. At FroGa, we believe in making mindfulness and yoga accessible to everyone, without barriers of cost or complexity. Our platform is dedicated to holistic well-being and self-discovery, inviting users to explore yoga and mindfulness practices with a smile.
 
 Purpose and Philosophy
@@ -18,10 +21,20 @@ Unique Frog Design: Our platform's distinctive frog design adds a touch of whims
 
 No Sign-up Required: Enjoy seamless access to all features and resources without the hassle of creating an account or providing personal information.
 
+### Live Deployment URL
+https://veromerocores.github.io/Froga/
 
-Yoga Poses API https://github.com/alexcumplido/yoga-api and ChatGPT
-Random Quotes API https://zenquotes.io/, ChatGPT and Charlie Bronca
-Toggle switch - adapted from https://www.w3schools.com/howto/howto_css_switch.asp
-Grid and Menu from MUI (https://mui.com/material-ui/react-grid/ and https://mui.com/material-ui/react-menu/)
+### Citations
+
+Yoga Poses API https://github.com/alexcumplido/yoga-api Accessed May 14, 2024
+
+Random Quotes API https://zenquotes.io/ Accessed May 12, 2024 
+
+OpenAI. (2023). ChatGPT (Mar 14 version) [Large language model]. https://chat.openai.com/chat Accessed May 15, 2024
+
+Toggle switch - adapted from https://www.w3schools.com/howto/howto_css_switch.asp Accessed May 10, 2024
+
+Grid and Menu from MUI (https://mui.com/material-ui/react-grid/ and https://mui.com/material-ui/react-menu/) Accessed May 15,2024
+
 
 Veronica Romero Cores
