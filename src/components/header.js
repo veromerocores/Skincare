@@ -23,27 +23,29 @@ export default function Header() {
 
   return (
     <React.Fragment>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'center', p: 2 }}>
-        <Box>
-          <a role="button" className='logo' tabIndex={0} href="/home">SkinPlan</a>
+        <Box className='header'>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'center', p: 2 }}>
+                <Box>
+                <a role="button" className='logo' tabIndex={0} href="/home">SkinPlan</a>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Typography sx={{ minWidth: 100 }}><a className='links' href='/about'>About</a></Typography>
+                <Typography sx={{ minWidth: 100 }}><a className='links' href='/search'>Search</a></Typography>
+                <Tooltip title="Account settings">
+                    <IconButton
+                    onClick={handleClick}
+                    size="small"
+                    sx={{ ml: 2 }}
+                    aria-controls={open ? 'account-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    >
+                    <Avatar sx={{ background: '#F4E2E2', width: 32, height: 32 }}>Sk</Avatar>
+                    </IconButton>
+                </Tooltip>
+                </Box>
+            </Box>
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Typography sx={{ minWidth: 100 }}><a className='links' href='/about'>About</a></Typography>
-          <Typography sx={{ minWidth: 100 }}><a className='links' href='/search'>Search</a></Typography>
-          <Tooltip title="Account settings">
-            <IconButton
-              onClick={handleClick}
-              size="small"
-              sx={{ ml: 2 }}
-              aria-controls={open ? 'account-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-            >
-              <Avatar sx={{ background: '#F4E2E2', width: 32, height: 32 }}>Sk</Avatar>
-            </IconButton>
-          </Tooltip>
-        </Box>
-      </Box>
       <Menu
         anchorEl={anchorEl}
         id="account-menu"

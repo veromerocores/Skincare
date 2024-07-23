@@ -1,9 +1,94 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   text-decoration-color: #4B4642;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/public/assets/fonts/Ultraquick.otf') format('opentype');
+  font-weight: normal; 
+  font-style: normal; 
+}
+
+/* Home */
+
+.homebackground {
+  background-image: url(/public/assets/images/greentexture.jpg);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.homeimage {
+  height: auto;
+  width: 100%;
+  z-index: 0;
+}
+
+.homecontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.homecards {
+  height: 55vh;
+  width: 53vh;
+  border-radius: 2vh;
+  display: flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+  margin-top: 8%;
+  margin-bottom: 12%;
+}
+
+.slogan {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.slogan h1 {
+  position: absolute;
+  z-index: 1; 
+  font-size: 10vh;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #84997C;
+  text-shadow: 
+    0.5px 0.5px 0 #eeeeee,
+    -0.5px -0.5px 0 #eeeeee,
+    0.5px -0.5px 0 #eeeeee,
+    -0.5px 0.5px 0 #eeeeee;
 }
 
 /* Header */
+.header {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 97%;
+  padding-left: 1%;
+  z-index: 10;
+}
+
 .links {
   text-decoration: none;
   color: #4B4642;
@@ -21,24 +106,21 @@ body {
 
 /* Footer */
 footer {
-  background-color: #F4E2E2;
+  background-color: #84997C;
   width: 100%;
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
-}
-
-.footerHome {
-  margin-top: -50rem;
-  position: absolute;
+  top: 0;
+  margin-top: -1.2%;
 }
 
 .line {
-  border-bottom: solid;
-  border-color: #4B4642;
+  border-bottom: solid 0.2vh;
+  border-color: #EEEEEE;
   width: 90%;
   margin-left: 5%;
-  margin-top: 2vh;
+  padding-top: 2%;
 }
 
 .footlists {
@@ -55,7 +137,7 @@ footer {
 .lista {
   cursor: pointer;
   text-decoration: none;
-  color: #4B4642;
+  color: #EEEEEE;
   display: flex;
   flex-direction: column;
   height: 3vh;
@@ -63,7 +145,7 @@ footer {
 }
 
 .lista:hover {
-  color:#84997C;
+  color: #F4E2E2 ;
 }
 
 ul {
@@ -78,7 +160,7 @@ ul {
 }
 
 .footcontent p {
-  color: #84997C;
+  color: #F4E2E2;
   font-weight: bold;
   font-size: 170%;
   margin-right: 15vh;
