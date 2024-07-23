@@ -3,6 +3,23 @@ body {
   text-decoration-color: #4B4642;
 }
 
+/* Header */
+.links {
+  text-decoration: none;
+  color: #4B4642;
+}
+
+.links:hover {
+  color:#84997C;
+}
+
+.logo {
+  text-decoration: none;
+  color: #84997C;
+  font-size: x-large;
+}
+
+/* Footer */
 footer {
   background-color: #F4E2E2;
   width: 100%;
