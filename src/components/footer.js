@@ -9,22 +9,22 @@ export default function Footer() {
                             <a href="/home" class="lista">Get Started</a>
                         </li>
                         <li>
-                            <a href="/froga" class="lista">FroGa</a>
+                            <a href="/questionnaire" class="lista">Questionnaire</a>
                         </li>
                         <li>
-                            <a href="/wisdom" class="lista">Wisdom</a>
+                            <a href="/planner" class="lista">Skincare Planner</a>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <a href="/yoga" class="lista">Yoga</a>
+                            <a href="/search" class="lista">Product Search</a>
                         </li>
                         <li>
                             <a href="/about" class="lista">About</a>
                         </li>
                     </ul>
                 </div>
-                <p>FroGa</p>
+                <p>SkinPlan</p>
             </div>
         </footer>
     );

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import BasicMenu from './menu';
 
 export default function Header() {
     const [theme, setTheme] = useState('light');
@@ -18,9 +17,7 @@ export default function Header() {
     return (
         <header className={`header ${theme}`}>
             <a role='button' tabIndex={0} href="/home">FroGa</a>
-            <div className='header-right'>
-                <BasicMenu />
-            </div>
+            
         </header>
     );
 }

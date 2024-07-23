@@ -3,19 +3,22 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import { Helmet } from 'react-helmet';
 
-const TITLE = 'About';
 
-export default function About() {
+const TITLE = 'Questionnaire';
+
+export default function Questionnaire() {
     return (
         <>
             <Helmet>
                 <title>{TITLE}</title>
             </Helmet>
-            <Header />
-            <main>
-            </main>
-
-            <Footer />
+            <div className="Questionnaire">
+                <Header />
+                <div>
+                    
+                </div>
+                <Footer />
+            </div>
         </>
     );
 }
