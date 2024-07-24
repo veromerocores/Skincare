@@ -16,6 +16,7 @@ export default function Home() {
                 <div className='slogan'>
                     <Header />
                     <h1>MANAGE YOUR SKINCARE</h1>
+                    <img src="../assets/images/flechasblancas.gif" className="gifhome" alt=""/>
                     <img src="../assets/images/skincare-portada.jpg" className='homeimage' alt="various skincare white containers in different sizes" />
                 </div>
                 <div className='homecontainer'>
@@ -28,8 +29,8 @@ export default function Home() {
                     <div className='homecards'>
                         <p>Search products by ingredient</p>
                     </div>
-                </div>
-            </main>
+                </div> 
+            </main>     
             <Footer class="footerHome" />
         </>
     );

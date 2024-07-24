@@ -72,11 +72,43 @@ main {
   font-size: 10vh;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #84997C;
+  margin-top: -1vh;
   text-shadow: 
     0.5px 0.5px 0 #eeeeee,
     -0.5px -0.5px 0 #eeeeee,
     0.5px -0.5px 0 #eeeeee,
     -0.5px 0.5px 0 #eeeeee;
+}
+
+.gifhome {
+  position: absolute;
+  display: flex;
+  width: 20vh;
+  height: 20vh;
+  margin-top: 30vh;
+  z-index: 1;
+}
+
+/* About */
+.aboutline {
+  border-left: solid 0.3vh;
+  border-color: #4B4642;
+  height: 5vh;
+  margin-left: 5%;
+  padding-top: 2%;
+}
+
+.aboutcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 6%;
+  margin-bottom: 5%;
+}
+
+.try {
+  border: solid #84997C;
 }
 
 /* Header */
