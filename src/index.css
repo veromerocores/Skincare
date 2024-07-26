@@ -94,12 +94,19 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url(/public/assets/images/texture.jpg);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
 }
 
 .questionnaire {
   margin-top: 6%;
   margin-bottom: 6%;
-  background-color: #F4E2E2;
+  background-color: rgb(244, 226, 226, 0.9);
   width: 70%;
   padding: 2%;
   border-radius: 5vh;
@@ -121,6 +128,48 @@ main {
   display: flex;
   justify-content: center;
   margin-top: 5%;
+}
+
+/* Search */
+.searchpage {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+/* Planner */
+.gauge {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-top: 2%;
+}
+
+.productcalendar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-content: space-between; 
+  width: 100%;
+  max-height: 90vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 10vh;
+  background-color: rgb(244, 226, 226, 0.8);
+  padding-top: 10vh;
+  margin-bottom: 20vh;
+  border-radius: 5vh;
+}
+
+.planner {
+  background-image: url(/public/assets/images/plannerbackground.jpg);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
 }
 
 /* About */
@@ -155,8 +204,9 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 8%;
-  padding-bottom: 6%;
+  padding-top: 8%;
+  padding-bottom: 10%;
+  background-color: rgb(244, 226, 226, 0.7);
 }
 
 .aboutbackground {
@@ -185,6 +235,143 @@ main {
   height: 45vh;
   border-radius: 5vh;
   margin-right: -6%;
+}
+
+.about2{
+  background-color: #EEEEEE;
+  height: 38.313rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 48rem) {
+  .about2 {
+    background-color: rgb(244, 226, 226, 0.7);
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    padding-top: 120%; 
+  }
+  .about2 h1{
+    font-size: 100%;
+  }
+  .about2 p{
+    font-size: 80%;
+  }
+  .paragraph{
+    margin-top: -20%;
+    margin-bottom: -20%;
+  }
+  .about2 label{
+    font-size: 80%;
+    margin-left: 10%;
+  }
+
+  .green-div{
+    background-color: #84997C;
+    width: 74%;
+    margin-left: 13%;
+    margin-bottom: 5%;
+    border-radius: 5vh;
+    margin-bottom: 60%;
+  }
+}
+
+.about-form{
+  width: 75%;
+  height: 75%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 5vh;
+  margin-top: 5%;
+  padding-bottom: 1%;
+}
+.about-form p{
+  width: 80%;
+}
+.about-form h1{
+  color: #84997C;
+}
+
+.about-form-button{
+  background-color: #84997C;
+  height: 5vh;
+  width: 23vh;
+  border-radius: 1.5vh;
+  border: 0.013rem solid #EEEEEE;
+  align-content: center;
+  margin-top: 8%;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  margin-top: -0.5%;
+  margin-bottom: 2%;
+}
+.about-form-button:hover{
+  background-color: #84997C;
+  box-shadow: inset 0rem 0.313rem 0.313rem -0.313rem #4B4642;
+  text-decoration: none; 
+  color: white;
+}
+
+.submit-form{
+  display: flex;
+  justify-content: center;
+}
+
+.form-inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  width: 75%;
+  gap: 2vh;
+}
+
+.first-name-input{
+  width: 45%;
+  border-radius: 0.438rem;
+  border: solid 0.063rem;
+}
+
+.last-name-input{
+  width: 45%;
+  border-radius: 0.438rem;
+  border: solid 0.063rem;
+}
+.email-input{
+  border-radius: 0.438rem;
+  border: solid 0.063rem;
+}
+.message-input{
+  border-radius: 0.438rem;
+  border: solid 0.063rem;
+  height: 10vh;
+}
+.message-input::placeholder{
+  position: relative;
+  top: -1.25rem;
+}
+
+.choice-input{
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.choices{
+  margin-left: -6vh;
+}
+
+.names-input{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Header */

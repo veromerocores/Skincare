@@ -46,11 +46,14 @@ export default function Questionnaire() {
                                 }}
                                 id="age-states-demo"
                                 options={ageOptions}
-                                sx={{ width: 300 }}
+                                sx={{ 
+                                    width: 300,
+                                    backgroundColor:'white',
+                                    borderRadius:'4px',
+                                }}
                                 renderInput={(params) => (
                                     <TextField
                                         {...params}
-                                        label="Age range"
                                         placeholder="Select your age range"
                                     />
                                 )}
@@ -81,7 +84,11 @@ export default function Questionnaire() {
                         }}
                         id="skin-type-states-demo"
                         options={skinTypeOptions}
-                        sx={{ width: 300 }}
+                        sx={{ 
+                            width: 300,
+                            backgroundColor:'white',
+                            borderRadius:'4px',
+                         }}
                         renderInput={(params) => (
                             <TextField
                                 {...params}
