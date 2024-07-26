@@ -83,32 +83,108 @@ main {
 .gifhome {
   position: absolute;
   display: flex;
-  width: 20vh;
-  height: 20vh;
+  width: 15vh;
+  height: 15vh;
   margin-top: 30vh;
   z-index: 1;
+}
+
+/* Questionnaire */
+.bodyquestionnaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.questionnaire {
+  margin-top: 6%;
+  margin-bottom: 6%;
+  background-color: #F4E2E2;
+  width: 70%;
+  padding: 2%;
+  border-radius: 5vh;
+}
+
+.questionnaire p {
+  margin-top: 5%;
+  color: #4B4642;
+}
+
+.agender {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-bottom: 5%;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 /* About */
 .aboutline {
   border-left: solid 0.3vh;
-  border-color: #4B4642;
-  height: 5vh;
+  border-color: #84997C;
+  height: 40vh;
   margin-left: 5%;
   padding-top: 2%;
 }
 
-.aboutcontainer {
+.aboutcontainer1 {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #f7f4f4;
+}
+
+.top {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 6%;
-  margin-bottom: 5%;
+  margin-top: 9%;
+  margin-bottom: 6%;
 }
 
-.try {
-  border: solid #84997C;
+.aboutcontainer2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 8%;
+  padding-bottom: 6%;
+}
+
+.aboutbackground {
+  background-image: url(/public/assets/images/texture.jpg);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.whoandwhat {
+  width: 40%;
+}
+
+.maskpicture {
+  width: 38%;
+  height: auto;
+  border-radius: 5vh;
+}
+
+.handpic {
+  width: auto;
+  height: 45vh;
+  border-radius: 5vh;
+  margin-right: -6%;
 }
 
 /* Header */
