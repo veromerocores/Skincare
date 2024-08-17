@@ -1,76 +1,125 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import { Helmet } from 'react-helmet';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
+import { ingredientMap } from '../constants/ingredientMap';
 
 const TITLE = 'Questionnaire';
 
-const ageOptions = ['13-18', '20-29', '30-39', '40-49', '50-59', '60+'];
+const ageOptions = ['13-19', '20-29', '30-39', '40-49', '50-59', '60+'];
 const skinTypeOptions = ['Oily', 'Dry', 'Combination', 'Sensitive', 'Normal'];
 
-const concernMap = {
-    'Acne': { ingredient: 'Salicylic Acid, Benzoyl Peroxide', step: 'Cleanser, Spot Treatment' },
-    'Wrinkles or fine lines': { ingredient: 'Retinol, Peptides', step: 'Serum, Night Cream' },
-    'Hydration': { ingredient: 'Hyaluronic Acid, Glycerin', step: 'Serum, Moisturizer' },
-    'Redness': { ingredient: 'Niacinamide, Centella Asiatica', step: 'Serum, Moisturizer' },
-    'Tightness': { ingredient: 'Hyaluronic Acid, Ceramides', step: 'Serum, Moisturizer' },
-    'Sagging/Loose skin': { ingredient: 'Vitamin C, Retinol', step: 'Serum, Night Cream' },
-    'Dark spots': { ingredient: 'Vitamin C, Alpha Arbutin', step: 'Serum, Spot Treatment' },
-    'Dullness': { ingredient: 'Vitamin C, Glycolic Acid', step: 'Serum, Exfoliant' },
-    'Enlarged pores': { ingredient: 'Niacinamide', step: 'Serum, Toner' },
-    'Blackheads/Whiteheads': { ingredient: 'Salicylic Acid', step: 'Cleanser, Toner' },
-};
-
 export default function Questionnaire() {
-    const [age, setAge] = useState(null);
-    const [ageInputValue, setAgeInputValue] = useState('');
-    const [skinType, setSkinType] = useState(null);
-    const [skinTypeInputValue, setSkinTypeInputValue] = useState('');
-    const [primaryConcerns, setPrimaryConcerns] = useState([]);
-    const [currentRoutine, setCurrentRoutine] = useState([]);
-    const [reactions, setReactions] = useState([]);
-    const [sunExposure, setSunExposure] = useState('never');
-    const [waterIntake, setWaterIntake] = useState('less');
-    const [sleep, setSleep] = useState('five');
-    const [diet, setDiet] = useState('unhealthy');
-    const [desiredOutcome, setDesiredOutcome] = useState('clearer');
+    const [age, setAge] = React.useState(null);
+    const [ageInputValue, setAgeInputValue] = React.useState('');
+    const [skinType, setSkinType] = React.useState(null);
+    const [skinTypeInputValue, setSkinTypeInputValue] = React.useState('');
+    const [concerns, setConcerns] = React.useState([]);
+    const [routineSteps, setRoutineSteps] = React.useState([]);
+    const [reactions, setReactions] = React.useState([]);
 
-    // Handle checkboxes
-    const handleCheckboxChange = (event, setState, state) => {
+    const handleConcernChange = (event) => {
         const value = event.target.name;
-        if (event.target.checked) {
-            setState([...state, value]);
-        } else {
-            setState(state.filter(item => item !== value));
-        }
+        setConcerns(prev => prev.includes(value) ? prev.filter(concern => concern !== value) : [...prev, value]);
     };
 
-    // Handle form submission
+    const handleRoutineChange = (event) => {
+        const value = event.target.name;
+        setRoutineSteps(prev => prev.includes(value) ? prev.filter(step => step !== value) : [...prev, value]);
+    };
+
+    const handleReactionChange = (event) => {
+        const value = event.target.name;
+        setReactions(prev => prev.includes(value) ? prev.filter(reaction => reaction !== value) : [...prev, value]);
+    };
+
     const handleSubmit = () => {
-        // Determine the biggest concern based on user input
-        const primaryConcern = desiredOutcome === 'clearer' ? 'Acne' : 
-                              desiredOutcome === 'anti-aging' ? 'Wrinkles or fine lines' : 
-                              desiredOutcome === 'hydrated' ? 'Hydration' : 
-                              desiredOutcome === 'even' ? 'Dark spots' : 
-                              desiredOutcome === 'calm' ? 'Redness' : 
-                              desiredOutcome === 'firmer' ? 'Sagging/Loose skin' : 
-                              desiredOutcome === 'bright' ? 'Dullness' : 
-                              primaryConcerns[0];
+        if (!age || !skinType) {
+            alert("Please select age and skin type before submitting.");
+            return;
+        }
 
-        // Suggest the ingredient and skincare step based on the primary concern
-        const recommendation = concernMap[primaryConcern];
+        // Define a reaction map to identify problematic ingredients
+        const reactionMap = {
+            "Burning/Stinging": ["Retinol", "Vitamin C", "AHA"],
+            "Redness": ["Retinol", "Vitamin C", "Fragrance"],
+            "Dryness/Flakiness": ["Salicylic Acid", "BHA", "Benzoyl Peroxide"],
+            "Breakouts": ["Heavy Oils", "Comedogenic Ingredients"]
+        };
 
-        alert(`Your biggest concern is: ${primaryConcern}\nSuggested ingredient: ${recommendation.ingredient}\nSuggested skincare step: ${recommendation.step}`);
+        const selectedSteps = {};
+        const ageSkinTypeMap = ingredientMap[age] && ingredientMap[age][skinType];
+
+        if (ageSkinTypeMap) {
+            concerns.forEach(concern => {
+                const stepRecommendations = ageSkinTypeMap[concern];
+                if (stepRecommendations) {
+                    Object.entries(stepRecommendations).forEach(([step, ingredient]) => {
+                        // Check if this step has already been recommended
+                        if (!selectedSteps[step]) {
+                            selectedSteps[step] = ingredient;
+                        }
+                    });
+                }
+            });
+        }
+
+        // Adjust recommendations based on skin type
+        if (skinType === 'Oily') {
+            if (selectedSteps['Moisturizer/Cream']) {
+                selectedSteps['Moisturizer/Cream'] = 'Gel-based Moisturizer';
+            }
+        } else if (skinType === 'Dry') {
+            if (selectedSteps['Cleanser']) {
+                selectedSteps['Cleanser'] = 'Cream Cleanser';
+            }
+        }
+
+        // Filter recommendations based on routine steps
+        const finalRecommendations = {};
+        routineSteps.forEach(step => {
+            if (selectedSteps[step]) {
+                finalRecommendations[step] = selectedSteps[step];
+            }
+        });
+
+        // Create warning messages for problematic ingredients
+        const warnings = [];
+        Object.entries(finalRecommendations).forEach(([step, ingredient]) => {
+            reactions.forEach(reaction => {
+                const problematicIngredients = reactionMap[reaction] || [];
+                problematicIngredients.forEach(problematicIngredient => {
+                    if (ingredient.includes(problematicIngredient)) {
+                        warnings.push(`${problematicIngredient} can cause ${reaction}`);
+                    }
+                });
+            });
+        });
+
+        // Check if sunscreen is included in the routine
+        if (!routineSteps.includes('Sunscreen')) {
+            warnings.push("You should always use sunscreen!");
+        }
+
+        // Format the recommendation string
+        const recommendationString = Object.entries(finalRecommendations)
+            .map(([step, ingredient]) => `${step}: ${ingredient}`)
+            .join('\n');
+
+        // Display the recommendations and warnings
+        if (warnings.length > 0) {
+            alert(`Based on your input, here are your recommended ingredients with warnings:\n\n${recommendationString}\n\nWarnings:\n${warnings.join('\n')}`);
+        } else {
+            alert(`Based on your input, here are your recommended ingredients:\n\n${recommendationString}`);
+        }
     };
 
     return (
@@ -81,160 +130,60 @@ export default function Questionnaire() {
             <main className='bodyquestionnaire'>
                 <Header />
                 <div className="questionnaire">
-                    <div className='agender'>
-                        <FormControl>
-                            <FormLabel id="age">Age</FormLabel>
-                            <Autocomplete
-                                value={age}
-                                onChange={(event, newValue) => {
-                                    setAge(newValue);
-                                }}
-                                inputValue={ageInputValue}
-                                onInputChange={(event, newInputValue) => {
-                                    setAgeInputValue(newInputValue);
-                                }}
-                                id="age-states-demo"
-                                options={ageOptions}
-                                sx={{ 
-                                    width: 300,
-                                    backgroundColor:'white',
-                                    borderRadius:'4px',
-                                }}
-                                renderInput={(params) => (
-                                    <TextField
-                                        {...params}
-                                        placeholder="Select your age range"
-                                    />
-                                )}
-                            />
-                        </FormControl>
-                        <FormControl>
-                            <FormLabel id="gender">Gender</FormLabel>
-                            <RadioGroup
-                                aria-labelledby="Gender"
-                                defaultValue="female"
-                                name="gender-group"
-                            >
-                                <FormControlLabel value="female" control={<Radio />} label="Female" />
-                                <FormControlLabel value="male" control={<Radio />} label="Male" />
-                                <FormControlLabel value="other" control={<Radio />} label="Other" />
-                            </RadioGroup>
-                        </FormControl>
-                    </div>
+                    <FormControl>
+                        <FormLabel id="age">Age</FormLabel>
+                        <Autocomplete
+                            value={age}
+                            onChange={(event, newValue) => setAge(newValue)}
+                            inputValue={ageInputValue}
+                            onInputChange={(event, newInputValue) => setAgeInputValue(newInputValue)}
+                            id="age-states-demo"
+                            options={ageOptions}
+                            sx={{ width: 300, backgroundColor: 'white', borderRadius: '4px' }}
+                            renderInput={(params) => <TextField {...params} placeholder="Select your age range" />}
+                        />
+                    </FormControl>
                     <p>1. What is your skin type?</p>
                     <Autocomplete
                         value={skinType}
-                        onChange={(event, newValue) => {
-                            setSkinType(newValue);
-                        }}
+                        onChange={(event, newValue) => setSkinType(newValue)}
                         inputValue={skinTypeInputValue}
-                        onInputChange={(event, newInputValue) => {
-                            setSkinTypeInputValue(newInputValue);
-                        }}
+                        onInputChange={(event, newInputValue) => setSkinTypeInputValue(newInputValue)}
                         id="skin-type-states-demo"
                         options={skinTypeOptions}
-                        sx={{ 
-                            width: 300,
-                            backgroundColor:'white',
-                            borderRadius:'4px',
-                         }}
-                        renderInput={(params) => (
-                            <TextField
-                                {...params}
-                                label="Skin Type"
-                                placeholder="Select your skin type"
-                            />
-                        )}
+                        sx={{ width: 300, backgroundColor: 'white', borderRadius: '4px' }}
+                        renderInput={(params) => <TextField {...params} label="Skin Type" placeholder="Select your skin type" />}
                     />
-                    <p>2. What are your primary skin concerns? (Select all that apply) </p>
+                    <p>2. What are your primary skin concerns? (Select all that apply)</p>
                     <FormGroup>
-                        {Object.keys(concernMap).map((concern) => (
+                        {["Acne", "Wrinkles or fine lines", "Hydration", "Redness", "Tightness", "Sagging/Loose skin", "Dark spots", "Dullness", "Enlarged pores", "Blackheads/Whiteheads"].map(concern => (
                             <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        name={concern}
-                                        onChange={(e) => handleCheckboxChange(e, setPrimaryConcerns, primaryConcerns)}
-                                    />
-                                }
-                                label={concern}
                                 key={concern}
+                                control={<Checkbox name={concern} onChange={handleConcernChange} />}
+                                label={concern}
                             />
                         ))}
                     </FormGroup>
-                    <p> 3. What steps are currently included in your skincare routine? (Select all that apply)</p>
+                    <p>3. What steps are currently in your skincare routine or which ones are you open to implement? (Select all that apply)</p>
                     <FormGroup>
-                        <FormControlLabel control={<Checkbox />} label="Cleanser" />
-                        <FormControlLabel control={<Checkbox />} label="Toner" />
-                        <FormControlLabel control={<Checkbox />} label="Serum" />
-                        <FormControlLabel control={<Checkbox />} label="Moisturizer/Cream" />
-                        <FormControlLabel control={<Checkbox />} label="Sunscreen" />
-                        <FormControlLabel control={<Checkbox />} label="Exfoliant" />
-                        <FormControlLabel control={<Checkbox />} label="Mask" />
+                        {["Cleanser", "Toner", "Serum", "Moisturizer/Cream", "Sunscreen", "Exfoliant", "Mask"].map(step => (
+                            <FormControlLabel
+                                key={step}
+                                control={<Checkbox name={step} onChange={handleRoutineChange} />}
+                                label={step}
+                            />
+                        ))}
                     </FormGroup>
-                    <p>4. Do you experience any of the following reactions when using skincare products? (Select all that apply)</p>
+                    <p>4. Have you experienced any negative reactions to skincare products? (Select all that apply)</p>
                     <FormGroup>
-                        <FormControlLabel control={<Checkbox />} label="Burning/Stinging" />
-                        <FormControlLabel control={<Checkbox />} label="Redness" />
-                        <FormControlLabel control={<Checkbox />} label="Dryness/Flakiness" />
-                        <FormControlLabel control={<Checkbox />} label="Breakouts" />
+                        {["Burning/Stinging", "Redness", "Dryness/Flakiness", "Breakouts"].map(reaction => (
+                            <FormControlLabel
+                                key={reaction}
+                                control={<Checkbox name={reaction} onChange={handleReactionChange} />}
+                                label={reaction}
+                            />
+                        ))}
                     </FormGroup>
-                    <p>5. How often do you expose your skin to the sun without protection?</p>
-                    <RadioGroup
-                        value={sunExposure}
-                        onChange={(e) => setSunExposure(e.target.value)}
-                        name="sun-group"
-                    >
-                        <FormControlLabel value="never" control={<Radio />} label="Never" />
-                        <FormControlLabel value="rarely" control={<Radio />} label="Rarely" />
-                        <FormControlLabel value="sometimes" control={<Radio />} label="Sometimes" />
-                        <FormControlLabel value="often" control={<Radio />} label="Often" />
-                        <FormControlLabel value="always" control={<Radio />} label="Always" />
-                    </RadioGroup>
-                    <p>6. How much water do you drink daily?</p>
-                    <RadioGroup
-                        value={waterIntake}
-                        onChange={(e) => setWaterIntake(e.target.value)}
-                        name="water-group"
-                    >
-                        <FormControlLabel value="less" control={<Radio />} label="Less than 1 liter" />
-                        <FormControlLabel value="one" control={<Radio />} label="Between 1 and 2 liters" />
-                        <FormControlLabel value="more" control={<Radio />} label="More than 2 liters" />
-                    </RadioGroup>
-                    <p>7. How much sleep do you get on average per night?</p>
-                    <RadioGroup
-                        value={sleep}
-                        onChange={(e) => setSleep(e.target.value)}
-                        name="sleep-group"
-                    >
-                        <FormControlLabel value="five" control={<Radio />} label="Less than 5 hours" />
-                        <FormControlLabel value="seven" control={<Radio />} label="Between 5 and 7 hours" />
-                        <FormControlLabel value="eight" control={<Radio />} label="Between 7 and 9 hours" />
-                        <FormControlLabel value="nine" control={<Radio />} label="More than 9 hours" />
-                    </RadioGroup>
-                    <p>8. How would you describe your diet?</p>
-                    <RadioGroup
-                        value={diet}
-                        onChange={(e) => setDiet(e.target.value)}
-                        name="diet-group"
-                    >
-                        <FormControlLabel value="unhealthy" control={<Radio />} label="Unhealthy (frequent fast food, sugary drinks, etc.) " />
-                        <FormControlLabel value="middle" control={<Radio />} label="Middle ground (mix of healthy and unhealthy foods) " />
-                        <FormControlLabel value="healthy" control={<Radio />} label="Healthy (mostly whole foods, balanced diet)" />
-                    </RadioGroup>
-                    <p>9. What is the main outcome you wish to achieve with your skincare routine?</p>
-                    <RadioGroup
-                        value={desiredOutcome}
-                        onChange={(e) => setDesiredOutcome(e.target.value)}
-                        name="outcome-group"
-                    >
-                        <FormControlLabel value="clearer" control={<Radio />} label="Clearer Skin (Acne control)" />
-                        <FormControlLabel value="anti-aging" control={<Radio />} label="Anti-Aging (Reduce wrinkles/fine lines)" />
-                        <FormControlLabel value="hydrated" control={<Radio />} label="Hydrated Skin" />
-                        <FormControlLabel value="even" control={<Radio />} label="Even Skin Tone (Reduce pigmentation/dark spots) " />
-                        <FormControlLabel value="calm" control={<Radio />} label="Calm Skin (Reduce redness/sensitivity)" />
-                        <FormControlLabel value="firmer" control={<Radio />} label="Firmer Skin (Reduce sagging/tighten skin)" />
-                        <FormControlLabel value="bright" control={<Radio />} label="Bright Skin (Reduce dullness)" />
-                    </RadioGroup>
                     <div className='submit'>
                         <Button variant="contained" color="success" onClick={handleSubmit}>Submit</Button>
                     </div>
@@ -243,5 +192,4 @@ export default function Questionnaire() {
             </main>
         </>
     );
-}
-
+};
