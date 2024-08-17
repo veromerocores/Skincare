@@ -6,120 +6,107 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import FormGroup from '@mui/material/FormGroup';
 import { ingredientMap } from '../constants/ingredientMap';
 
 const TITLE = 'Questionnaire';
 
 const ageOptions = ['13-19', '20-29', '30-39', '40-49', '50-59', '60+'];
 const skinTypeOptions = ['Oily', 'Dry', 'Combination', 'Sensitive', 'Normal'];
+const concernOptions = ["Acne", "Wrinkles or fine lines", "Hydration", "Redness", "Tightness", "Sagging", "Dark spots", "Dullness", "Enlarged pores", "Blackheads/Whiteheads"];
+const routineStepsOptions = ["Cleanser", "Toner", "Serum", "Moisturizer/Cream", "Sunscreen", "Exfoliant", "Mask"];
+const reactionOptions = ["Burning/Stinging", "Redness", "Dryness/Flakiness", "Breakouts"];
+
+const reactionMap = {
+    "Burning/Stinging": ["Retinol", "Vitamin C", "AHA"],
+    "Redness": ["Retinol", "Vitamin C", "Fragrance"],
+    "Dryness/Flakiness": ["Salicylic Acid", "BHA", "Benzoyl Peroxide"],
+    "Breakouts": ["Heavy Oils", "Comedogenic"]
+};
+
+const getFilteredRecommendations = (age, skinType, concern, routineSteps) => {
+    const ageSkinTypeMap = ingredientMap[age]?.[skinType];
+    if (!ageSkinTypeMap) return {};
+
+    const concernRecommendations = ageSkinTypeMap[concern] || {};
+    const selectedSteps = { ...concernRecommendations };
+
+    if (skinType === 'Oily' && selectedSteps['Moisturizer']) {
+        selectedSteps['Moisturizer'] = 'Gel-based Moisturizer';
+    } else if (skinType === 'Dry' && selectedSteps['Cleanser']) {
+        selectedSteps['Cleanser'] = 'Cream Cleanser';
+    }
+
+    return routineSteps.reduce((acc, step) => {
+        if (selectedSteps[step]) acc[step] = selectedSteps[step];
+        return acc;
+    }, {});
+};
+
+const getWarnings = (recommendations, reactions) => {
+    const warnings = [];
+    Object.entries(recommendations).forEach(([step, ingredient]) => {
+        reactions.forEach(reaction => {
+            (reactionMap[reaction] || []).forEach(problematicIngredient => {
+                if (ingredient.includes(problematicIngredient)) {
+                    warnings.push(`${problematicIngredient} can cause ${reaction}`);
+                }
+            });
+        });
+    });
+    return warnings;
+};
 
 export default function Questionnaire() {
     const [age, setAge] = React.useState(null);
     const [ageInputValue, setAgeInputValue] = React.useState('');
     const [skinType, setSkinType] = React.useState(null);
     const [skinTypeInputValue, setSkinTypeInputValue] = React.useState('');
-    const [concerns, setConcerns] = React.useState([]);
+    const [concern, setConcern] = React.useState('');
     const [routineSteps, setRoutineSteps] = React.useState([]);
     const [reactions, setReactions] = React.useState([]);
-
-    const handleConcernChange = (event) => {
-        const value = event.target.name;
-        setConcerns(prev => prev.includes(value) ? prev.filter(concern => concern !== value) : [...prev, value]);
-    };
-
-    const handleRoutineChange = (event) => {
-        const value = event.target.name;
-        setRoutineSteps(prev => prev.includes(value) ? prev.filter(step => step !== value) : [...prev, value]);
-    };
-
-    const handleReactionChange = (event) => {
-        const value = event.target.name;
-        setReactions(prev => prev.includes(value) ? prev.filter(reaction => reaction !== value) : [...prev, value]);
-    };
+    const [openModal, setOpenModal] = React.useState(false);
+    const [modalContent, setModalContent] = React.useState('');
 
     const handleSubmit = () => {
         if (!age || !skinType) {
-            alert("Please select age and skin type before submitting.");
+            window.alert("Please select age and skin type before submitting.");
             return;
         }
 
-        // Define a reaction map to identify problematic ingredients
-        const reactionMap = {
-            "Burning/Stinging": ["Retinol", "Vitamin C", "AHA"],
-            "Redness": ["Retinol", "Vitamin C", "Fragrance"],
-            "Dryness/Flakiness": ["Salicylic Acid", "BHA", "Benzoyl Peroxide"],
-            "Breakouts": ["Heavy Oils", "Comedogenic Ingredients"]
-        };
-
-        const selectedSteps = {};
-        const ageSkinTypeMap = ingredientMap[age] && ingredientMap[age][skinType];
-
-        if (ageSkinTypeMap) {
-            concerns.forEach(concern => {
-                const stepRecommendations = ageSkinTypeMap[concern];
-                if (stepRecommendations) {
-                    Object.entries(stepRecommendations).forEach(([step, ingredient]) => {
-                        // Check if this step has already been recommended
-                        if (!selectedSteps[step]) {
-                            selectedSteps[step] = ingredient;
-                        }
-                    });
-                }
-            });
+        if (!concern) {
+            window.alert("Please select a primary skin concern before submitting.");
+            return;
         }
 
-        // Adjust recommendations based on skin type
-        if (skinType === 'Oily') {
-            if (selectedSteps['Moisturizer/Cream']) {
-                selectedSteps['Moisturizer/Cream'] = 'Gel-based Moisturizer';
-            }
-        } else if (skinType === 'Dry') {
-            if (selectedSteps['Cleanser']) {
-                selectedSteps['Cleanser'] = 'Cream Cleanser';
-            }
+        if (routineSteps.length === 0) {
+            window.alert("Please select at least one skincare step.");
+            return;
         }
 
-        // Filter recommendations based on routine steps
-        const finalRecommendations = {};
-        routineSteps.forEach(step => {
-            if (selectedSteps[step]) {
-                finalRecommendations[step] = selectedSteps[step];
-            }
-        });
+        const finalRecommendations = getFilteredRecommendations(age, skinType, concern, routineSteps);
+        const warnings = getWarnings(finalRecommendations, reactions);
 
-        // Create warning messages for problematic ingredients
-        const warnings = [];
-        Object.entries(finalRecommendations).forEach(([step, ingredient]) => {
-            reactions.forEach(reaction => {
-                const problematicIngredients = reactionMap[reaction] || [];
-                problematicIngredients.forEach(problematicIngredient => {
-                    if (ingredient.includes(problematicIngredient)) {
-                        warnings.push(`${problematicIngredient} can cause ${reaction}`);
-                    }
-                });
-            });
-        });
-
-        // Check if sunscreen is included in the routine
         if (!routineSteps.includes('Sunscreen')) {
             warnings.push("You should always use sunscreen!");
         }
 
-        // Format the recommendation string
         const recommendationString = Object.entries(finalRecommendations)
             .map(([step, ingredient]) => `${step}: ${ingredient}`)
             .join('\n');
 
-        // Display the recommendations and warnings
-        if (warnings.length > 0) {
-            alert(`Based on your input, here are your recommended ingredients with warnings:\n\n${recommendationString}\n\nWarnings:\n${warnings.join('\n')}`);
-        } else {
-            alert(`Based on your input, here are your recommended ingredients:\n\n${recommendationString}`);
-        }
+        const fullMessage = `Based on your input, here are your recommended ingredients:\n\n${recommendationString}\n\nWarnings:\n${warnings.join('\n')}`;
+
+        setModalContent(fullMessage);
+        setOpenModal(true);
     };
 
     return (
@@ -154,32 +141,39 @@ export default function Questionnaire() {
                         sx={{ width: 300, backgroundColor: 'white', borderRadius: '4px' }}
                         renderInput={(params) => <TextField {...params} label="Skin Type" placeholder="Select your skin type" />}
                     />
-                    <p>2. What are your primary skin concerns? (Select all that apply)</p>
-                    <FormGroup>
-                        {["Acne", "Wrinkles or fine lines", "Hydration", "Redness", "Tightness", "Sagging/Loose skin", "Dark spots", "Dullness", "Enlarged pores", "Blackheads/Whiteheads"].map(concern => (
-                            <FormControlLabel
-                                key={concern}
-                                control={<Checkbox name={concern} onChange={handleConcernChange} />}
-                                label={concern}
-                            />
-                        ))}
-                    </FormGroup>
+                    <p>2. What is your primary skin concern?</p>
+                    <FormControl>
+                        <RadioGroup
+                            value={concern}
+                            onChange={(event) => setConcern(event.target.value)}
+                            aria-labelledby="skin-concern-group"
+                        >
+                            {concernOptions.map(concernOption => (
+                                <FormControlLabel
+                                    key={concernOption}
+                                    value={concernOption}
+                                    control={<Radio />}
+                                    label={concernOption}
+                                />
+                            ))}
+                        </RadioGroup>
+                    </FormControl>
                     <p>3. What steps are currently in your skincare routine or which ones are you open to implement? (Select all that apply)</p>
                     <FormGroup>
-                        {["Cleanser", "Toner", "Serum", "Moisturizer/Cream", "Sunscreen", "Exfoliant", "Mask"].map(step => (
+                        {routineStepsOptions.map(step => (
                             <FormControlLabel
                                 key={step}
-                                control={<Checkbox name={step} onChange={handleRoutineChange} />}
+                                control={<Checkbox name={step} onChange={(e) => setRoutineSteps(prev => e.target.checked ? [...prev, step] : prev.filter(s => s !== step))} />}
                                 label={step}
                             />
                         ))}
                     </FormGroup>
                     <p>4. Have you experienced any negative reactions to skincare products? (Select all that apply)</p>
                     <FormGroup>
-                        {["Burning/Stinging", "Redness", "Dryness/Flakiness", "Breakouts"].map(reaction => (
+                        {reactionOptions.map(reaction => (
                             <FormControlLabel
                                 key={reaction}
-                                control={<Checkbox name={reaction} onChange={handleReactionChange} />}
+                                control={<Checkbox name={reaction} onChange={(e) => setReactions(prev => e.target.checked ? [...prev, reaction] : prev.filter(r => r !== reaction))} />}
                                 label={reaction}
                             />
                         ))}
@@ -189,7 +183,20 @@ export default function Questionnaire() {
                     </div>
                 </div>
                 <Footer />
+
+                {/* Modal */}
+                <Dialog open={openModal} onClose={() => setOpenModal(false)}>
+                    <DialogContent>
+                        <pre>{modalContent}</pre>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={() => setOpenModal(false)}>Close</Button>
+                    </DialogActions>
+                </Dialog>
             </main>
         </>
     );
-};
+}
+
+
+

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -13,39 +14,57 @@ import Logout from '@mui/icons-material/Logout';
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const navigate = useNavigate(); // Use navigate hook
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
 
+  const goToSkincarePlanner = () => {
+    navigate('/planner'); 
+    handleClose();
+  };
+
+  const goToQuestionnaire = () => {
+    navigate('/questionnaire');
+    handleClose();
+  };
+
+  const goToHome = () => {
+    navigate('/home');
+    handleClose();
+  };
+
   return (
     <React.Fragment>
-        <Box className='header'>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'center', p: 2 }}>
-                <Box>
-                <a role="button" className='logo' tabIndex={0} href="/home">SkinPlan</a>
-                </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Typography sx={{ minWidth: 100 }}><a className='links' href='/about'>About</a></Typography>
-                <Typography sx={{ minWidth: 100 }}><a className='links' href='/search'>Search</a></Typography>
-                <Tooltip title="Account settings">
-                    <IconButton
-                    onClick={handleClick}
-                    size="small"
-                    sx={{ ml: 2 }}
-                    aria-controls={open ? 'account-menu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    >
-                    <Avatar sx={{ background: '#F4E2E2', width: 32, height: 32 }}>Sk</Avatar>
-                    </IconButton>
-                </Tooltip>
-                </Box>
-            </Box>
+      <Box className='header'>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'center', p: 2 }}>
+          <Box>
+            <a role="button" className='logo' tabIndex={0} href="/home">SkinPlan</a>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Typography sx={{ minWidth: 100 }}><a className='links' href='/about'>About</a></Typography>
+            <Typography sx={{ minWidth: 100 }}><a className='links' href='/search'>Search</a></Typography>
+            <Tooltip title="Account settings">
+              <IconButton
+                onClick={handleClick}
+                size="small"
+                sx={{ ml: 2 }}
+                aria-controls={open ? 'account-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+              >
+                <Avatar sx={{ background: '#F4E2E2', width: 32, height: 32 }}>Sk</Avatar>
+              </IconButton>
+            </Tooltip>
+          </Box>
         </Box>
+      </Box>
       <Menu
         anchorEl={anchorEl}
         id="account-menu"
@@ -81,19 +100,19 @@ export default function Header() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={goToSkincarePlanner}>
           <ListItemIcon>
             <PersonAdd fontSize="small" />
           </ListItemIcon>
           Skincare Planner
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={goToQuestionnaire}>
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
           Questionnaire
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={goToHome}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
@@ -102,6 +121,4 @@ export default function Header() {
       </Menu>
     </React.Fragment>
   );
-}
-
-
+};

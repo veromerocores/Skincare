@@ -28,7 +28,7 @@ export const ingredientMap = {
                 "Exfoliant": "PHA (Polyhydroxy Acid)",
                 "Mask": "Calming Mask with Centella Asiatica"
             },
-            "Dark Spots": {
+            "DarkSpots": {
                 "Cleanser": "Glycolic Acid Cleanser",
                 "Toner": "Niacinamide Toner",
                 "Serum": "Vitamin C",
@@ -46,7 +46,7 @@ export const ingredientMap = {
                 "Exfoliant": "Lactic Acid",
                 "Mask": "Exfoliating Mask with Enzymes"
             },
-            "Enlarged Pores": {
+            "Enlarged-Pores": {
                 "Cleanser": "Salicylic Acid Cleanser",
                 "Toner": "Niacinamide Toner",
                 "Serum": "Niacinamide + Zinc",
@@ -55,7 +55,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA (Salicylic Acid)",
                 "Mask": "Clay Mask with Charcoal"
             },
-            "Blackheads/Whiteheads": {
+            "BlackheadsOrWhiteheads": {
                 "Cleanser": "Salicylic Acid Cleanser",
                 "Toner": "Witch Hazel with Tea Tree Oil",
                 "Serum": "Salicylic Acid Serum",
@@ -65,7 +65,7 @@ export const ingredientMap = {
                 "Mask": "Charcoal Mask"
             },
             "Wrinkles or fine lines": "Please follow the Hydration routine.",
-            "Sagging/Loose skin": "Please follow the Hydration routine."
+            "Sagging": "Please follow the Hydration routine."
         },
         "Dry": {
             "Acne": {
@@ -95,7 +95,7 @@ export const ingredientMap = {
                 "Exfoliant": "PHA (Polyhydroxy Acid)",
                 "Mask": "Calming Mask with Oatmeal"
             },
-            "Dark Spots": {
+            "DarkSpots": {
                 "Cleanser": "Gentle Cleanser with Glycolic Acid",
                 "Toner": "Glycolic Acid Toner",
                 "Serum": "Vitamin C",
@@ -113,7 +113,7 @@ export const ingredientMap = {
                 "Exfoliant": "Lactic Acid",
                 "Mask": "Brightening Mask"
             },
-            "Enlarged Pores": {
+            "EnlargedPores": {
                 "Cleanser": "Salicylic Acid Cleanser",
                 "Toner": "Niacinamide Toner",
                 "Serum": "Niacinamide",
@@ -122,7 +122,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA (Salicylic Acid)",
                 "Mask": "Clay Mask"
             },
-            "Blackheads/Whiteheads": {
+            "BlackheadsOrWhiteheads": {
                 "Cleanser": "Gentle Cleanser with Salicylic Acid",
                 "Toner": "Witch Hazel with Aloe",
                 "Serum": "Salicylic Acid Serum",
@@ -132,7 +132,7 @@ export const ingredientMap = {
                 "Mask": "Charcoal Mask"
             },
             "Wrinkles or fine lines": "Please follow the Hydration routine.",
-            "Sagging/Loose skin": "Please follow the Hydration routine."
+            "Sagging": "Please follow the Hydration routine."
         },
         "Combination": {
             "Acne": {
@@ -162,7 +162,7 @@ export const ingredientMap = {
                 "Exfoliant": "PHA (Polyhydroxy Acid)",
                 "Mask": "Calming Mask with Centella Asiatica"
             },
-            "Dark Spots": {
+            "DarkSpots": {
                 "Cleanser": "Glycolic Acid Cleanser",
                 "Toner": "Niacinamide Toner",
                 "Serum": "Vitamin C",
@@ -180,7 +180,7 @@ export const ingredientMap = {
                 "Exfoliant": "Lactic Acid",
                 "Mask": "Brightening Enzyme Mask"
             },
-            "Enlarged Pores": {
+            "EnlargedPores": {
                 "Cleanser": "Salicylic Acid Cleanser",
                 "Toner": "Niacinamide + Witch Hazel Toner",
                 "Serum": "Niacinamide",
@@ -189,7 +189,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA",
                 "Mask": "Clay Mask with Charcoal"
             },
-            "Blackheads/Whiteheads": {
+            "BlackheadsOrWhiteheads": {
                 "Cleanser": "Salicylic Acid Cleanser",
                 "Toner": "Witch Hazel + Niacinamide Toner",
                 "Serum": "Salicylic Acid Serum",
@@ -199,7 +199,7 @@ export const ingredientMap = {
                 "Mask": "Charcoal Mask"
             },
             "Wrinkles or fine lines": "Please follow the Hydration routine.",
-            "Sagging/Loose skin": "Please follow the Hydration routine."
+            "Sagging": "Please follow the Hydration routine."
         },
         "Sensitive": {
             "Acne": {
@@ -229,7 +229,7 @@ export const ingredientMap = {
                 "Exfoliant": "PHA (Polyhydroxy Acid)",
                 "Mask": "Calming Mask with Oatmeal"
             },
-            "Dark Spots": {
+            "DarkSpots": {
                 "Cleanser": "Gentle Cleanser with Vitamin C",
                 "Toner": "Niacinamide Toner",
                 "Serum": "Vitamin C",
@@ -247,7 +247,7 @@ export const ingredientMap = {
                 "Exfoliant": "PHA (Polyhydroxy Acid)",
                 "Mask": "Brightening Mask"
             },
-            "Enlarged Pores": {
+            "EnlargedPores": {
                 "Cleanser": "Gentle Salicylic Acid Cleanser",
                 "Toner": "Niacinamide Toner",
                 "Serum": "Niacinamide",
@@ -256,7 +256,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA (Salicylic Acid)",
                 "Mask": "Clay Mask"
             },
-            "Blackheads/Whiteheads": {
+            "BlackheadsOrWhiteheads": {
                 "Cleanser": "Gentle Salicylic Acid Cleanser",
                 "Toner": "Aloe Vera Toner",
                 "Serum": "Salicylic Acid Serum",
@@ -266,7 +266,7 @@ export const ingredientMap = {
                 "Mask": "Charcoal Mask"
             },
             "Wrinkles or fine lines": "Please follow the Hydration routine.",
-            "Sagging/Loose skin": "Please follow the Hydration routine."
+            "Sagging": "Please follow the Hydration routine."
         }
     },
     "20-29": {
@@ -343,7 +343,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA",
                 "Mask": "Charcoal Mask"
             },
-            "Sagging/Loose skin": "Please follow the Hydration routine."
+            "Sagging": "Please follow the Hydration routine."
         },
         "Dry": {
             "Acne": {
@@ -418,7 +418,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA (Salicylic Acid)",
                 "Mask": "Charcoal Mask"
             },
-            "Sagging/Loose skin": "Please follow the Hydration routine."
+            "Sagging": "Please follow the Hydration routine."
         },
         "Combination": {
             "Acne": {
@@ -493,7 +493,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA",
                 "Mask": "Charcoal Mask"
             },
-            "Sagging/Loose skin": "Please follow the Hydration routine."
+            "Sagging": "Please follow the Hydration routine."
         },
         "Sensitive": {
             "Acne": {
@@ -568,7 +568,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA",
                 "Mask": "Charcoal Mask"
             },
-            "Sagging/Loose skin": "Please follow the Hydration routine."
+            "Sagging": "Please follow the Hydration routine."
         }
     },
     '30-39': {
@@ -618,7 +618,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Gel Cleanser with Salicylic Acid',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Retinol + Peptides',
@@ -627,7 +627,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Gel Cleanser with Salicylic Acid',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Vitamin C Serum',
@@ -645,7 +645,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Brightening Hydration Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Gel Cleanser with Salicylic Acid',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Niacinamide Serum',
@@ -654,7 +654,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Gel Cleanser with Salicylic Acid',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Salicylic Acid Serum',
@@ -710,7 +710,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Retinol + Peptides',
@@ -719,7 +719,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Vitamin C Serum',
@@ -737,7 +737,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle AHA (Glycolic Acid)',
                 'Mask': 'Brightening Hydration Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Niacinamide Serum',
@@ -746,7 +746,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle AHA (Glycolic Acid)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Salicylic Acid Serum',
@@ -802,7 +802,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Balancing Gel Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Retinol + Peptides',
@@ -811,7 +811,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Balancing Gel Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Vitamin C Serum',
@@ -829,7 +829,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Brightening Hydration Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Balancing Gel Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Niacinamide Serum',
@@ -838,7 +838,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Balancing Gel Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Salicylic Acid Serum',
@@ -894,7 +894,7 @@ export const ingredientMap = {
                 'Exfoliant': 'PHA (Polyhydroxy Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Retinol + Peptides',
@@ -903,7 +903,7 @@ export const ingredientMap = {
                 'Exfoliant': 'PHA (Polyhydroxy Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Vitamin C Serum',
@@ -921,7 +921,7 @@ export const ingredientMap = {
                 'Exfoliant': 'PHA (Polyhydroxy Acid)',
                 'Mask': 'Brightening Hydration Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Niacinamide Serum',
@@ -930,7 +930,7 @@ export const ingredientMap = {
                 'Exfoliant': 'PHA (Polyhydroxy Acid)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Salicylic Acid Serum',
@@ -988,7 +988,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Foaming Cleanser with Salicylic Acid',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Retinol + Peptides',
@@ -997,7 +997,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Foaming Cleanser with Salicylic Acid',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Vitamin C Serum',
@@ -1015,7 +1015,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Brightening Hydration Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Foaming Cleanser with Salicylic Acid',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Niacinamide Serum',
@@ -1024,7 +1024,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Foaming Cleanser with Salicylic Acid',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Salicylic Acid Serum',
@@ -1080,7 +1080,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Retinol + Peptides',
@@ -1089,7 +1089,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Vitamin C Serum',
@@ -1107,7 +1107,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle AHA (Glycolic Acid)',
                 'Mask': 'Brightening Hydration Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Niacinamide Serum',
@@ -1116,7 +1116,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle AHA (Glycolic Acid)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Salicylic Acid Serum',
@@ -1172,7 +1172,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Balancing Gel Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Retinol + Peptides',
@@ -1181,7 +1181,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Balancing Gel Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Vitamin C Serum',
@@ -1199,7 +1199,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Brightening Hydration Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Balancing Gel Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Niacinamide Serum',
@@ -1208,7 +1208,7 @@ export const ingredientMap = {
                 'Exfoliant': 'AHA (Glycolic Acid)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Balancing Gel Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Salicylic Acid Serum',
@@ -1264,7 +1264,7 @@ export const ingredientMap = {
                 'Exfoliant': 'PHA (Polyhydroxy Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Retinol + Peptides',
@@ -1273,7 +1273,7 @@ export const ingredientMap = {
                 'Exfoliant': 'PHA (Polyhydroxy Acid)',
                 'Mask': 'Firming Hydration Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Vitamin C Serum',
@@ -1291,7 +1291,7 @@ export const ingredientMap = {
                 'Exfoliant': 'PHA (Polyhydroxy Acid)',
                 'Mask': 'Brightening Hydration Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Niacinamide Serum',
@@ -1300,7 +1300,7 @@ export const ingredientMap = {
                 'Exfoliant': 'PHA (Polyhydroxy Acid)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Salicylic Acid Serum',
@@ -1385,7 +1385,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA",
                 "Mask": "Charcoal Mask"
             },
-            "Sagging/Loose skin": {
+            "Sagging": {
                 "Cleanser": "Gentle Foaming Cleanser",
                 "Toner": "Hydrating Toner with Hyaluronic Acid",
                 "Serum": "Retinol + Peptides",
@@ -1468,7 +1468,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA",
                 "Mask": "Charcoal Mask"
             },
-            "Sagging/Loose skin": {
+            "Sagging": {
                 "Cleanser": "Cream Cleanser",
                 "Toner": "Hydrating Toner with Hyaluronic Acid",
                 "Serum": "Retinol + Peptides",
@@ -1551,7 +1551,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA",
                 "Mask": "Charcoal Mask"
             },
-            "Sagging/Loose skin": {
+            "Sagging": {
                 "Cleanser": "Balancing Gel Cleanser",
                 "Toner": "Hydrating Toner with Hyaluronic Acid",
                 "Serum": "Retinol + Peptides",
@@ -1634,7 +1634,7 @@ export const ingredientMap = {
                 "Exfoliant": "BHA",
                 "Mask": "Charcoal Mask"
             },
-            "Sagging/Loose skin": {
+            "Sagging": {
                 "Cleanser": "Gentle Cream Cleanser",
                 "Toner": "Hydrating Toner with Hyaluronic Acid",
                 "Serum": "Retinol + Peptides",
@@ -1656,7 +1656,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Salicylic Acid Exfoliant (1-2 times a week)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Gentle Foaming Cleanser with Salicylic Acid',
                 'Toner': 'Balancing Toner with Niacinamide',
                 'Serum': 'Salicylic Acid Serum',
@@ -1692,7 +1692,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle Exfoliant with Lactic Acid (1 time a week)',
                 'Mask': 'Hydrating Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Firming Toner with Peptides',
                 'Serum': 'Retinol Serum',
@@ -1701,7 +1701,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Glycolic Acid Exfoliant (1 time a week)',
                 'Mask': 'Firming and Hydrating Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Brightening Cleanser with Vitamin C',
                 'Toner': 'Brightening Toner with Vitamin C',
                 'Serum': 'Vitamin C Serum',
@@ -1710,7 +1710,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Glycolic Acid Exfoliant (1-2 times a week)',
                 'Mask': 'Brightening and Hydrating Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Purifying Cleanser with Salicylic Acid',
                 'Toner': 'Pore-Minimizing Toner with Niacinamide',
                 'Serum': 'Niacinamide Serum',
@@ -1730,7 +1730,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle Exfoliant (1 time a week)',
                 'Mask': 'Hydrating Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Gentle Cream Cleanser with Salicylic Acid',
                 'Toner': 'Hydrating Toner with Hyaluronic Acid',
                 'Serum': 'Salicylic Acid Serum',
@@ -1766,7 +1766,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle Exfoliant with Lactic Acid (1 time a week)',
                 'Mask': 'Hydrating Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Firming Toner with Peptides',
                 'Serum': 'Retinol Serum',
@@ -1775,7 +1775,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Glycolic Acid Exfoliant (1 time a week)',
                 'Mask': 'Firming and Hydrating Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Brightening Cleanser with Vitamin C',
                 'Toner': 'Brightening Toner with Vitamin C',
                 'Serum': 'Vitamin C Serum',
@@ -1784,7 +1784,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Glycolic Acid Exfoliant (1-2 times a week)',
                 'Mask': 'Brightening and Hydrating Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Purifying Cleanser with Salicylic Acid',
                 'Toner': 'Pore-Minimizing Toner with Niacinamide',
                 'Serum': 'Niacinamide Serum',
@@ -1804,7 +1804,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Salicylic Acid Exfoliant (1-2 times a week)',
                 'Mask': 'Clay Mask'
             },
-            'Blackheads/Whiteheads': {
+            'BlackheadsOrWhiteheads': {
                 'Cleanser': 'Gentle Foaming Cleanser with Salicylic Acid',
                 'Toner': 'Balancing Toner with Niacinamide',
                 'Serum': 'Salicylic Acid Serum',
@@ -1840,7 +1840,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Gentle Exfoliant with Lactic Acid (1 time a week)',
                 'Mask': 'Hydrating Mask'
             },
-            'Sagging/Loose skin': {
+            'Sagging': {
                 'Cleanser': 'Gentle Cream Cleanser',
                 'Toner': 'Firming Toner with Peptides',
                 'Serum': 'Retinol Serum',
@@ -1849,7 +1849,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Glycolic Acid Exfoliant (1 time a week)',
                 'Mask': 'Firming and Hydrating Mask'
             },
-            'Dark spots': {
+            'DarkSpots': {
                 'Cleanser': 'Brightening Cleanser with Vitamin C',
                 'Toner': 'Brightening Toner with Vitamin C',
                 'Serum': 'Vitamin C Serum',
@@ -1858,7 +1858,7 @@ export const ingredientMap = {
                 'Exfoliant': 'Glycolic Acid Exfoliant (1-2 times a week)',
                 'Mask': 'Brightening and Hydrating Mask'
             },
-            'Enlarged pores': {
+            'EnlargedPores': {
                 'Cleanser': 'Purifying Cleanser with Salicylic Acid',
                 'Toner': 'Pore-Minimizing Toner with Niacinamide',
                 'Serum': 'Niacinamide Serum',
