@@ -22,6 +22,7 @@ export default function Footer() {
                         <li>
                             <a href="/about" class="lista">About</a>
                         </li>
+                        <li class="lista">Privacy Policy and Terms of Use</li>
                     </ul>
                 </div>
                 <p>SkinPlan</p>

@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 const TITLE = 'Homepage';
 
 export default function Home() {
-    // Create a ref for the section you want to scroll to
+    // Create a ref for the section to scroll to
     const targetSectionRef = useRef(null);
 
     // Function to scroll to the target section
@@ -25,30 +25,45 @@ export default function Home() {
                 <div className='slogan'>
                     <Header />
                     <h1>MANAGE YOUR SKINCARE</h1>
-                    <img 
-                        src="../assets/images/flechasblancas.gif" 
-                        className="gifhome" 
-                        alt="white arrows pointing downwards" 
+                    <img
+                        src="../assets/images/flechasblancas.gif"
+                        className="gifhome"
+                        alt="white arrows pointing downwards"
                         onClick={scrollToSection}
                     />
-                    <img 
-                        src="../assets/images/skincare-portada.jpg" 
-                        className='homeimage' 
-                        alt="various skincare white containers in different sizes" 
+                    <img
+                        src="../assets/images/skincare-portada.jpg"
+                        className='homeimage'
+                        alt="various skincare white containers in different sizes"
                     />
                 </div>
-                <div className='homecontainer' ref={targetSectionRef}> {}
+                <div className='homecontainer' ref={targetSectionRef}>
                     <div className='homecards'>
-                        <p>Plan and manage your routine</p>
+                        <div className='image-container'>
+                            <img src="../assets/images/skin-plan.jpg" className="fitcards" alt="skincare product containers in different colours and shapes" />
+                            <div className='ovalhome'>
+                                <a href="/planner" className="links">Plan and manage your routine</a>
+                            </div>
+                        </div>
                     </div>
                     <div className='homecards'>
-                        <p>Take the questionnaire to know what you need</p>
+                        <div className='image-container'>
+                            <img src="../assets/images/skin-types.jpeg" className="fitcards" alt="faces of four different women" />
+                            <div className='ovalhome'>
+                                <a href="/questionnaire" className="links">Take our quiz to know your needs</a>
+                            </div>
+                        </div>
                     </div>
                     <div className='homecards'>
-                        <p>Search products by ingredient</p>
+                        <div className='image-container'>
+                            <img src="../assets/images/ingredients-skin.jpg" className="fitcards" alt="various ingredients in Petri dishes" />
+                            <div className='ovalhome'>
+                                <a href="/search" className="links">Search products by ingredient</a>
+                            </div>
+                        </div>
                     </div>
-                </div> 
-            </main>     
+                </div>
+            </main>
             <Footer class="footerHome" />
         </>
     );
