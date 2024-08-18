@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "product": "CeraVe Renewing SA Cleanser",
+    "type": "Cleanser",
+    "ingredient": "Salicylic Acid"
+  },
+  {
+    "id": 2,
+    "product": "Thayers Witch Hazel Toner with Tea Tree",
+    "type": "Toner",
+    "ingredient": "Witch Hazel + Tea Tree Oil"
+  },
+  {
+    "id": 3,
+    "product": "The Ordinary Niacinamide 10% + Zinc 1%",
+    "type": "Serum",
+    "ingredient": "Niacinamide"
+  },
+  {
+    "id": 4,
+    "product": "Neutrogena Hydro Boost Water Gel",
+    "type": "Moisturizer",
+    "ingredient": "Oil-Free"
+  },
+  {
+    "id": 5,
+    "product": "La Roche-Posay Anthelios Clear Skin Dry Touch SPF 60",
+    "type": "Sunscreen",
+    "ingredient": "Non-comedogenic SPF"
+  },
+  {
+    "id": 6,
+    "product": "Paula's Choice Skin Perfecting 2% BHA Liquid Exfoliant",
+    "type": "Exfoliant",
+    "ingredient": "BHA (Salicylic Acid)"
+  },
+  {
+    "id": 7,
+    "product": "Aztec Secret Indian Healing Clay",
+    "type": "Mask",
+    "ingredient": "Clay Mask (Bentonite)"
+  },
+  {
+    "id": 8,
+    "product": "CeraVe Hydrating Facial Cleanser",
+    "type": "Cleanser",
+    "ingredient": "Gentle Foaming Cleanser"
+  },
+  {
+    "id": 9,
+    "product": "Klairs Supple Preparation Unscented Toner",
+    "type": "Toner",
+    "ingredient": "Hyaluronic Acid"
+  },
+  {
+    "id": 10,
+    "product": "The Ordinary Retinol 0.5% in Squalane",
+    "type": "Serum",
+    "ingredient": "Retinol"
+  },
+  {
+    "id": 11,
+    "product": "CeraVe Moisturizing Cream",
+    "type": "Moisturizer",
+    "ingredient": "Hydrating Moisturizer"
+  },
+  {
+    "id": 12,
+    "product": "EltaMD UV Clear Broad-Spectrum SPF 46",
+    "type": "Sunscreen",
+    "ingredient": "Broad-Spectrum SPF"
+  },
+  {
+    "id": 13,
+    "product": "The Ordinary Glycolic Acid 7% Toning Solution",
+    "type": "Exfoliant",
+    "ingredient": "AHA (Glycolic Acid)"
+  },
+  {
+    "id": 14,
+    "product": "Olay Regenerist Retinol 24 Max Night Face Mask",
+    "type": "Mask",
+    "ingredient": "Hydrating and Anti-Aging Mask"
+  },
+  {
+    "id": 15,
+    "product": "Neutrogena Hydro Boost Hydrating Cleansing Gel",
+    "type": "Cleanser",
+    "ingredient": "Hyaluronic Acid"
+  },
+  {
+    "id": 16,
+    "product": "Hada Labo Gokujyun Hydrating Lotion",
+    "type": "Toner",
+    "ingredient": "Hyaluronic Acid"
+  },
+  {
+    "id": 17,
+    "product": "The Ordinary Hyaluronic Acid 2% + B5",
+    "type": "Serum",
+    "ingredient": "Hyaluronic Acid"
+  },
+  {
+    "id": 18,
+    "product": "Clinique Moisture Surge 72-Hour Auto-Replenishing Hydrator",
+    "type": "Moisturizer",
+    "ingredient": "Gel-Based Moisturizer"
+  },
+  {
+    "id": 19,
+    "product": "La Roche-Posay Anthelios Melt-in Milk Sunscreen SPF 60",
+    "type": "Sunscreen",
+    "ingredient": "Hydrating SPF (Oil-Free)"
+  },
+  {
+    "id": 20,
+    "product": "The Ordinary PHA 3% + Lactic Acid 2%",
+    "type": "Exfoliant",
+    "ingredient": "PHA (Polyhydroxy Acid)"
+  },
+  {
+    "id": 21,
+    "product": "Laneige Water Sleeping Mask",
+    "type": "Mask",
+    "ingredient": "Aloe Vera"
+  },
+  {
+    "id": 22,
+    "product": "CeraVe Hydrating Facial Cleanser",
+    "type": "Cleanser",
+    "ingredient": "Gentle Foaming Cleanser"
+  },
+  {
+    "id": 23,
+    "product": "Innisfree Green Tea Balancing Toner",
+    "type": "Toner",
+    "ingredient": "Green Tea Toner"
+  },
+  {
+    "id": 24,
+    "product": "The Ordinary Azelaic Acid Suspension 10%",
+    "type": "Serum",
+    "ingredient": "Azelaic Acid"
+  },
+  {
+    "id": 25,
+    "product": "Avene Skin Recovery Cream",
+    "type": "Moisturizer",
+    "ingredient": "Calming Gel Moisturizer"
+  },
+  {
+    "id": 26,
+    "product": "EltaMD UV Clear Broad-Spectrum SPF 46",
+    "type": "Sunscreen",
+    "ingredient": "Mineral SPF"
+  },
+  {
+    "id": 27,
+    "product": "The Ordinary PHA 3% + Lactic Acid 2%",
+    "type": "Exfoliant",
+    "ingredient": "PHA (Polyhydroxy Acid)"
+  },
+  {
+    "id": 28,
+    "product": "Dr. Jart+ Cicapair Tiger Grass Calming Mask",
+    "type": "Mask",
+    "ingredient": "Centella Asiatica"
+  },
+  {
+    "id": 29,
+    "product": "Glycolic Acid Cleanser by Alpha-H",
+    "type": "Cleanser",
+    "ingredient": "Glycolic Acid"
+  },
+  {
+    "id": 30,
+    "product": "The Ordinary Niacinamide 10% + Zinc 1%",
+    "type": "Toner",
+    "ingredient": "Niacinamide"
+  },
+  {
+    "id": 31,
+    "product": "SkinCeuticals C E Ferulic",
+    "type": "Serum",
+    "ingredient": "Vitamin C"
+  },
+  {
+    "id": 32,
+    "product": "Olay Luminous Tone Perfecting Cream",
+    "type": "Moisturizer",
+    "ingredient": "Brightening Gel"
+  },
+  {
+    "id": 33,
+    "product": "EltaMD UV Clear Broad-Spectrum SPF 46",
+    "type": "Sunscreen",
+    "ingredient": "Broad-Spectrum SPF"
+  },
+  {
+    "id": 34,
+    "product": "The Ordinary Glycolic Acid 7% Toning Solution",
+    "type": "Exfoliant",
+    "ingredient": "AHA (Glycolic Acid)"
+  },
+  {
+    "id": 35,
+    "product": "Origins GinZing Glow-Boosting Mask",
+    "type": "Mask",
+    "ingredient": "Brightening Mask"
+  },
+  {
+    "id": 36,
+    "product": "CeraVe Renewing SA Cleanser",
+    "type": "Cleanser",
+    "ingredient": "Salicylic Acid"
+  },
+  {
+    "id": 37,
+    "product": "The Ordinary Glycolic Acid 7% Toning Solution",
+    "type": "Toner",
+    "ingredient": "Glycolic Acid"
+  },
+  {
+    "id": 38,
+    "product": "SkinCeuticals C E Ferulic",
+    "type": "Serum",
+    "ingredient": "Vitamin C"
+  }
+]

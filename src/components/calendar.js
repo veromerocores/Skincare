@@ -46,7 +46,7 @@ function ServerDay(props) {
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            fontSize: '0.9rem', // Adjust the size as needed
+            fontSize: '0.9rem', 
             gap: '0px',
           }}>
             {emojiArray.map((emoji, index) => (
@@ -59,18 +59,37 @@ function ServerDay(props) {
   );
 }
 
-export default function DateCalendarServerRequest() {
+export default function DateCalendarServerRequest({ onEmojiCountChange }) {
   const [clickCounts, setClickCounts] = React.useState({});
+  const currentMonth = dayjs().month();
 
   const handleDayClick = (day) => {
     const dayStr = day.format('YYYY-MM-DD');
     setClickCounts((prev) => {
       const currentCount = prev[dayStr] || 0;
       const newCount = (currentCount + 1) % 4; // Toggle between 0, 1, 2, and 3
-      return {
+      const newClickCounts = {
         ...prev,
         [dayStr]: newCount,
       };
+
+      // Calculate the total number of visible emojis
+      const totalEmojis = Object.entries(newClickCounts)
+        .filter(([dateStr]) => dayjs(dateStr).month() === currentMonth) // Only count emojis for the current month
+        .reduce((acc, [, count]) => {
+          if (count === 1) return acc + 1;
+          if (count === 2) return acc + 2;
+          if (count === 3) return acc + 1;
+          return acc;
+        }, 0);
+
+      const totalDaysInMonth = day.daysInMonth();
+      const maxEmojis = totalDaysInMonth * 2; // Maximum of 2 emojis per day
+      const emojiPercentage = (totalEmojis / maxEmojis) * 100;
+
+      onEmojiCountChange(emojiPercentage);
+
+      return newClickCounts;
     });
   };
 

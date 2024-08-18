@@ -2,38 +2,44 @@ import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import { Helmet } from 'react-helmet';
-import { TextField, List, ListItem, ListItemText, Box, Typography, Container } from '@mui/material';
+import { TextField, List, ListItem, ListItemText, Box, Typography, Container, FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-
-// Simulated search results for skincare ingredients
-const searchData = [
-  { id: 1, title: 'Hyaluronic Acid', description: 'Hydrates and plumps the skin.' },
-  { id: 2, title: 'Vitamin C', description: 'Brightens and evens skin tone.' },
-  { id: 3, title: 'Niacinamide', description: 'Reduces inflammation and improves skin elasticity.' },
-  { id: 4, title: 'Retinol', description: 'Boosts collagen production and reduces wrinkles.' },
-  { id: 5, title: 'Salicylic Acid', description: 'Exfoliates and helps with acne.' },
-  { id: 6, title: 'Glycolic Acid', description: 'AHA that exfoliates the surface of the skin.' },
-  // API would be used, this is an example
-];
+import productDatabase from '../productDatabase.json';
 
 const TITLE = 'Search';
 
 export default function Search() {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
+  const [type, setType] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
+
+  // Filter results based on query and type
+  const filterResults = () => {
+    if (!Array.isArray(productDatabase)) {
+      console.error('Expected productDatabase to be an array but got:', productDatabase);
+      return;
+    }
+    const results = productDatabase.filter((item) =>
+      (item.product.toLowerCase().includes(query.toLowerCase()) ||
+      item.ingredient.toLowerCase().includes(query.toLowerCase())) &&
+      (type ? item.type === type : true)
+    );
+    setFilteredResults(results);
+  };
 
   // Handle search query change
-  const handleSearch = (event) => {
-    const value = event.target.value;
-    setQuery(value);
+  const handleSearchChange = (event) => {
+    setQuery(event.target.value);
+  };
 
-    // Filter results based on query
-    const filteredResults = searchData.filter((item) =>
-      item.title.toLowerCase().includes(value.toLowerCase()) ||
-      item.description.toLowerCase().includes(value.toLowerCase())
-    );
+  // Handle type selection change
+  const handleTypeChange = (event) => {
+    setType(event.target.value);
+  };
 
-    setResults(filteredResults);
+  // Handle search button click
+  const handleSearchClick = () => {
+    filterResults();
   };
 
   return (
@@ -52,15 +58,42 @@ export default function Search() {
                 variant="outlined"
                 label="Search Skincare Ingredients"
                 value={query}
-                onChange={handleSearch}
+                onChange={handleSearchChange}
                 sx={{ ml: 1 }}
               />
+              <FormControl sx={{ ml: 2, minWidth: 120 }}>
+                <InputLabel>Type</InputLabel>
+                <Select
+                  value={type}
+                  onChange={handleTypeChange}
+                  displayEmpty
+                >
+                  <MenuItem value="">
+                    <em>All</em>
+                  </MenuItem>
+                  <MenuItem value="Exfoliant">Exfoliant</MenuItem>
+                  <MenuItem value="Cleanser">Cleanser</MenuItem>
+                  <MenuItem value="Toner">Toner</MenuItem>
+                  <MenuItem value="Serum">Serum</MenuItem>
+                  <MenuItem value="Moisturizer">Moisturizer</MenuItem>
+                  <MenuItem value="Sunscreen">Sunscreen</MenuItem>
+                  <MenuItem value="Mask">Mask</MenuItem>
+                </Select>
+              </FormControl>
+              <Button 
+                variant="contained" 
+                color="primary" 
+                sx={{ ml: 2 }} 
+                onClick={handleSearchClick}
+              >
+                Search
+              </Button>
             </Box>
             <List>
-              {results.length > 0 ? (
-                results.map((item) => (
+              {filteredResults.length > 0 ? (
+                filteredResults.map((item) => (
                   <ListItem key={item.id}>
-                    <ListItemText primary={item.title} secondary={item.description} />
+                    <ListItemText primary={item.product} secondary={item.ingredient} />
                   </ListItem>
                 ))
               ) : (
