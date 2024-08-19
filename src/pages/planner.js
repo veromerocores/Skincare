@@ -23,7 +23,7 @@ export default function Planner() {
             </Helmet>
             <div className="planner">
                 <Header />
-                <div className='plannerhead'>
+                <div>
                     <div className='gauge'>
                         <Gauge width={800} height={200} 
                             value={emojiPercentage}

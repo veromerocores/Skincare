@@ -177,32 +177,44 @@ main {
   padding-top: 2%;
 }
 
+.gauge {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-top: 2%;
+}
+
 .productcalendar {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center; 
-  align-content: space-between; 
+  align-content: flex-start; 
   width: 100%;
-  max-height: 90vh;
+  height: fit-content;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 10vh;
-  background-color: rgb(244, 226, 226, 0.8);
-  padding-top: 10vh;
-  margin-bottom: 20vh;
+  gap: 5%;
+  background-color: rgba(244, 226, 226, 0.8);
+  padding-top: 6vh;
+  margin-bottom: 23vh;
+  padding-left: 1vh;
   border-radius: 5vh;
+  overflow: hidden;
 }
 
 .planner {
+  display: flex;
+  flex-direction: column; 
   background-image: url(/public/assets/images/plannerbackground.jpg);
   background-size: cover; 
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  height: auto;
   margin-bottom: 0;
 }
+
 
 /* About */
 .aboutline {
@@ -257,7 +269,7 @@ main {
 }
 
 .maskpicture {
-  width: 38%;
+  width: 70vh;
   height: auto;
   border-radius: 5vh;
 }
@@ -279,12 +291,11 @@ main {
 
 @media (max-width: 48rem) {
   .about2 {
-    background-color: rgb(244, 226, 226, 0.7);
+    background-color: #EEEEEE;
     height: 800px;
     width: 100%;
     display: flex;
     justify-content: center;
-    position: absolute;
     padding-top: 120%; 
   }
   .about2 h1{

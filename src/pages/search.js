@@ -11,7 +11,7 @@ const TITLE = 'Search';
 export default function Search() {
   const [query, setQuery] = useState('');
   const [type, setType] = useState('');
-  const [filteredResults, setFilteredResults] = useState([]);
+  const [filteredResults, setFilteredResults] = useState(productDatabase); // Initialize with all products
 
   // Filter results based on query and type
   const filterResults = () => {
@@ -19,6 +19,7 @@ export default function Search() {
       console.error('Expected productDatabase to be an array but got:', productDatabase);
       return;
     }
+
     const results = productDatabase.filter((item) =>
       (item.product.toLowerCase().includes(query.toLowerCase()) ||
       item.ingredient.toLowerCase().includes(query.toLowerCase())) &&
