@@ -42,6 +42,8 @@ export default function ImageMasonry() {
   );
 }
 
+// Supposed to be the images of the products you select, just placeholders for the prototype
+
 const itemData = [
   {
     img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
@@ -53,7 +55,7 @@ const itemData = [
   },
   {
     img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
+    title: 'Moisturizer',
   },
   {
     img: 'https://images.unsplash.com/photo-1529655683826-aba9b3e77383',
