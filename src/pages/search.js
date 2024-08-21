@@ -53,21 +53,25 @@ export default function Search() {
         <Container maxWidth="sm">
           <Box sx={{ padding: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-              <SearchIcon />
+              <SearchIcon aria-hidden="true" />
               <TextField
                 fullWidth
                 variant="outlined"
-                label="Search Skincare Ingredients"
+                label="Search Skincare Ingredients" // Accessible label
                 value={query}
                 onChange={handleSearchChange}
                 sx={{ ml: 1 }}
+                aria-label="Search for skincare ingredients"
+                aria-describedby="search-field-description"
               />
               <FormControl sx={{ ml: 2, minWidth: 120 }}>
-                <InputLabel>Type</InputLabel>
+                <InputLabel id="type-label">Type</InputLabel> {/* Accessible label */}
                 <Select
                   value={type}
                   onChange={handleTypeChange}
                   displayEmpty
+                  inputProps={{ 'aria-labelledby': 'type-label' }}
+                  aria-label="Select product type"
                 >
                   <MenuItem value="">
                     <em>All</em>
@@ -86,15 +90,20 @@ export default function Search() {
                 color="primary" 
                 sx={{ ml: 2 }} 
                 onClick={handleSearchClick}
+                aria-label="Search"
               >
                 Search
               </Button>
             </Box>
-            <List>
+            <List aria-labelledby="search-results-list">
               {filteredResults.length > 0 ? (
                 filteredResults.map((item) => (
                   <ListItem key={item.id}>
-                    <ListItemText primary={item.product} secondary={item.ingredient} />
+                    <ListItemText 
+                      primary={item.product} 
+                      secondary={item.ingredient}
+                      aria-label={`${item.product}, ${item.ingredient}`}
+                    />
                   </ListItem>
                 ))
               ) : (

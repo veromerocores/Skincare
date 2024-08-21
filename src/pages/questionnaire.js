@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import { Helmet } from 'react-helmet';
@@ -15,7 +15,6 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import FormGroup from '@mui/material/FormGroup';
-import { ingredientMap } from '../constants/ingredientMap';
 
 const TITLE = 'Questionnaire';
 
@@ -32,49 +31,59 @@ const reactionMap = {
     "Breakouts": ["Heavy Oils", "Comedogenic"]
 };
 
-const getFilteredRecommendations = (age, skinType, concern, routineSteps) => {
-    const ageSkinTypeMap = ingredientMap[age]?.[skinType];
-    if (!ageSkinTypeMap) return {};
+export default function Questionnaire() {
+    const [age, setAge] = useState(null);
+    const [ageInputValue, setAgeInputValue] = useState('');
+    const [skinType, setSkinType] = useState(null);
+    const [skinTypeInputValue, setSkinTypeInputValue] = useState('');
+    const [concern, setConcern] = useState('');
+    const [routineSteps, setRoutineSteps] = useState([]);
+    const [reactions, setReactions] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+    const [modalContent, setModalContent] = useState('');
+    const [ingredientMap, setIngredientMap] = useState(null);
 
-    const concernRecommendations = ageSkinTypeMap[concern] || {};
-    const selectedSteps = { ...concernRecommendations };
+    useEffect(() => {
+        fetch('../ingredientMap.json')
+            .then(response => response.json())
+            .then(data => setIngredientMap(data))
+            .catch(error => console.error('Error loading ingredientMap:', error));
+    }, []);
 
-    if (skinType === 'Oily' && selectedSteps['Moisturizer']) {
-        selectedSteps['Moisturizer'] = 'Gel-based Moisturizer';
-    } else if (skinType === 'Dry' && selectedSteps['Cleanser']) {
-        selectedSteps['Cleanser'] = 'Cream Cleanser';
-    }
+    const getFilteredRecommendations = (age, skinType, concern, routineSteps) => {
+        if (!ingredientMap) return {}; // Wait for the data to load
 
-    return routineSteps.reduce((acc, step) => {
-        if (selectedSteps[step]) acc[step] = selectedSteps[step];
-        return acc;
-    }, {});
-};
+        const ageSkinTypeMap = ingredientMap[age]?.[skinType];
+        if (!ageSkinTypeMap) return {};
 
-const getWarnings = (recommendations, reactions) => {
-    const warnings = [];
-    Object.entries(recommendations).forEach(([step, ingredient]) => {
-        reactions.forEach(reaction => {
-            (reactionMap[reaction] || []).forEach(problematicIngredient => {
-                if (ingredient.includes(problematicIngredient)) {
-                    warnings.push(`${problematicIngredient} can cause ${reaction}`);
-                }
+        const concernRecommendations = ageSkinTypeMap[concern] || {};
+        const selectedSteps = { ...concernRecommendations };
+
+        if (skinType === 'Oily' && selectedSteps['Moisturizer']) {
+            selectedSteps['Moisturizer'] = 'Gel-based Moisturizer';
+        } else if (skinType === 'Dry' && selectedSteps['Cleanser']) {
+            selectedSteps['Cleanser'] = 'Cream Cleanser';
+        }
+
+        return routineSteps.reduce((acc, step) => {
+            if (selectedSteps[step]) acc[step] = selectedSteps[step];
+            return acc;
+        }, {});
+    };
+
+    const getWarnings = (recommendations, reactions) => {
+        const warnings = [];
+        Object.entries(recommendations).forEach(([step, ingredient]) => {
+            reactions.forEach(reaction => {
+                (reactionMap[reaction] || []).forEach(problematicIngredient => {
+                    if (ingredient.includes(problematicIngredient)) {
+                        warnings.push(`${problematicIngredient} can cause ${reaction}`);
+                    }
+                });
             });
         });
-    });
-    return warnings;
-};
-
-export default function Questionnaire() {
-    const [age, setAge] = React.useState(null);
-    const [ageInputValue, setAgeInputValue] = React.useState('');
-    const [skinType, setSkinType] = React.useState(null);
-    const [skinTypeInputValue, setSkinTypeInputValue] = React.useState('');
-    const [concern, setConcern] = React.useState('');
-    const [routineSteps, setRoutineSteps] = React.useState([]);
-    const [reactions, setReactions] = React.useState([]);
-    const [openModal, setOpenModal] = React.useState(false);
-    const [modalContent, setModalContent] = React.useState('');
+        return warnings;
+    };
 
     const handleSubmit = () => {
         if (!age || !skinType) {
@@ -197,6 +206,3 @@ export default function Questionnaire() {
         </>
     );
 }
-
-
-

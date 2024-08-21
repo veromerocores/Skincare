@@ -23,31 +23,33 @@ export default function Planner() {
             </Helmet>
             <div className="planner">
                 <Header />
-                <div>
-                    <div className='gauge'>
-                        <Gauge width={800} height={200} 
+                <main>
+                    <div role="region" aria-labelledby="gauge-label" className='gauge'>
+                        <Gauge 
+                            width={800} 
+                            height={200}
                             value={emojiPercentage}
                             startAngle={-110}
                             endAngle={110}
                             sx={{
-                            [`& .${gaugeClasses.valueText}`]: {
-                                fontSize: 40,
-                                transform: 'translate(0px, 0px)',
-                            },
+                                [`& .${gaugeClasses.valueText}`]: {
+                                    fontSize: 40,
+                                    transform: 'translate(0px, 0px)',
+                                },
                             }}
-                            text={
-                                ({ value }) => `${Math.round(value)}%`
-                            }
+                            text={({ value }) => `${Math.round(value)}%`}
+                            id="gauge-label"
+                            aria-label={`Current emoji usage is ${Math.round(emojiPercentage)} percent`} // Accessible description
                         />
                     </div>
                     <div className='productcalendar'>
-                        <PlannerImages />
+                        <PlannerImages aria-label="Images related to your planner" />
                         <div>
-                            <Calendar onEmojiCountChange={handleEmojiCountChange} />
-                            <NoteToSelf />
-                        </div>                      
+                            <Calendar onEmojiCountChange={handleEmojiCountChange} aria-label="Calendar for managing your planner" />
+                            <NoteToSelf aria-label="Notes to self for the planner" />
+                        </div>
                     </div>
-                </div>
+                </main>
                 <Footer />
             </div>
         </>
