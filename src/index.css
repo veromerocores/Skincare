@@ -88,6 +88,7 @@ main {
   padding: 0.4rem;
   text-align: center; 
   z-index: 1; 
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .slogan {
