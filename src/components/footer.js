@@ -1,28 +1,28 @@
 export default function Footer() {
     return(
         <footer>
-            <div class="line"></div>
-            <div class="footcontent">
-                <div class="footlists">
+            <div className="line"></div>
+            <div className="footcontent">
+                <div className="footlists">
                     <ul>
                         <li>
-                            <a href="/home" class="lista">Get Started</a>
+                            <a href="/home" className="lista">Get Started</a>
                         </li>
                         <li>
-                            <a href="/questionnaire" class="lista">Questionnaire</a>
+                            <a href="/questionnaire" className="lista">Questionnaire</a>
                         </li>
                         <li>
-                            <a href="/planner" class="lista">Skincare Planner</a>
+                            <a href="/planner" className="lista">Skincare Planner</a>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <a href="/search" class="lista">Product Search</a>
+                            <a href="/search" className="lista">Product Search</a>
                         </li>
                         <li>
-                            <a href="/about" class="lista">About</a>
+                            <a href="/about" className="lista">About</a>
                         </li>
-                        <li class="lista">Privacy Policy and Terms of Use</li>
+                        <li className="lista">Privacy Policy and Terms of Use</li>
                     </ul>
                 </div>
                 <p>SkinPlan</p>
