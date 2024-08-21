@@ -1,6 +1,6 @@
 ### Project Description
 
-
+The Interactive Skincare Routine Planner was developed to offer a holistic solution for managing personalized skincare routines, integrating features such as a skin quiz, product recommendations, routine management, and an ingredient-based search function. The primary objective was to create a platform that empowers users to make informed skincare decisions, tailored to their unique needs and preferences. This is a MSc project, and it still on development.
 
 ### Live Deployment URL
 
